@@ -1,0 +1,246 @@
+/*
+ * text_mode_vga_color.c
+ * Minimal driver for text mode VGA support
+ * This is for Week 2, with color support
+ *
+ *  Created on: Oct 25, 2021
+ *      Author: zuofu
+ */
+
+#include <system.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <alt_types.h>
+#include "text_mode_vga_color.h"
+#include <stdio.h>
+#include "system.h"
+#include "altera_avalon_spi.h"
+#include "altera_avalon_spi_regs.h"
+#include "altera_avalon_pio_regs.h"
+#include "sys/alt_irq.h"
+#include "usb_kb/GenericMacros.h"
+#include "usb_kb/GenericTypeDefs.h"
+#include "usb_kb/HID.h"
+#include "usb_kb/MAX3421E.h"
+#include "usb_kb/transfer.h"
+#include "usb_kb/usb_ch9.h"
+#include "usb_kb/USB.h"
+#include "time.h"
+
+void textVGAColorClr()
+{
+	for (int i = 0; i<(ROWS*COLUMNS) * 2; i++)
+	{
+		vga_ctrl->VRAM[i] = 0x00;
+	}
+}
+
+void textVGADrawColorText(char* str, double x, double y, alt_u8 background, alt_u8 foreground)
+{
+	int i = 0;
+	while (str[i]!=0)
+	{
+		vga_ctrl->VRAM[((int)ceil(y)*COLUMNS + (int)ceil(x) + i) * 2] = foreground << 4 | background;
+		vga_ctrl->VRAM[((int)ceil(y)*COLUMNS + (int)ceil(x) + i) * 2 + 1] = str[i];
+		i++;
+	}
+}
+
+void setColorPalette (alt_u8 color, alt_u8 red, alt_u8 green, alt_u8 blue)
+{
+	//fill in this function to set the color palette starting at offset 0x0000 2000 (from base)
+	int regIdx = color >> 1;
+	int i;
+	if (color % 2 == 0) { // setting the right color in a register
+		vga_ctrl->palette[regIdx] &= ~(0xFFF << 1);
+		for (i = 1; i <= 4; i++) {
+			vga_ctrl->palette[regIdx] |= (((blue >> (i - 1)) & 1) << i);
+		}
+		for (i = 5; i <= 8; i++) {
+			vga_ctrl->palette[regIdx] |= (((green >> (i - 5)) & 1) << i);
+		}
+		for (i = 9; i <= 12; i++) {
+			vga_ctrl->palette[regIdx] |= (((red >> (i - 9)) & 1) << i);
+		}
+	}
+	else {
+		vga_ctrl->palette[regIdx] &= ~(0xFFF << 13);
+		for (i = 13; i <= 16; i++) {
+			vga_ctrl->palette[regIdx] |= (((blue >> (i - 13)) & 1) << i);
+		}
+		for (i = 17; i <= 20; i++) {
+			vga_ctrl->palette[regIdx] |= (((green >> (i - 17)) & 1) << i);
+		}
+		for (i = 21; i <= 24; i++) {
+			vga_ctrl->palette[regIdx] |= (((red >> (i - 21)) & 1) << i);
+		}
+	}
+}
+
+void setLED(int LED) {
+	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_PIO_BASE,
+			(IORD_ALTERA_AVALON_PIO_DATA(LEDS_PIO_BASE) | (0x001 << LED)));
+}
+
+void clearLED(int LED) {
+	IOWR_ALTERA_AVALON_PIO_DATA(LEDS_PIO_BASE,
+			(IORD_ALTERA_AVALON_PIO_DATA(LEDS_PIO_BASE) & ~(0x001 << LED)));
+
+}
+
+void printSignedHex0(signed char value) {
+	BYTE tens = 0;
+	BYTE ones = 0;
+	WORD pio_val = IORD_ALTERA_AVALON_PIO_DATA(HEX_DIGITS_PIO_BASE);
+	if (value < 0) {
+		setLED(11);
+		value = -value;
+	} else {
+		clearLED(11);
+	}
+	//handled hundreds
+	if (value / 100)
+		setLED(13);
+	else
+		clearLED(13);
+
+	value = value % 100;
+	tens = value / 10;
+	ones = value % 10;
+
+	pio_val &= 0x00FF;
+	pio_val |= (tens << 12);
+	pio_val |= (ones << 8);
+
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_DIGITS_PIO_BASE, pio_val);
+}
+
+void printSignedHex1(signed char value) {
+	BYTE tens = 0;
+	BYTE ones = 0;
+	DWORD pio_val = IORD_ALTERA_AVALON_PIO_DATA(HEX_DIGITS_PIO_BASE);
+	if (value < 0) {
+		setLED(10);
+		value = -value;
+	} else {
+		clearLED(10);
+	}
+	//handled hundreds
+	if (value / 100)
+		setLED(12);
+	else
+		clearLED(12);
+
+	value = value % 100;
+	tens = value / 10;
+	ones = value % 10;
+	tens = value / 10;
+	ones = value % 10;
+
+	pio_val &= 0xFF00;
+	pio_val |= (tens << 4);
+	pio_val |= (ones << 0);
+
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_DIGITS_PIO_BASE, pio_val);
+}
+
+void runGame()
+{	
+	BYTE rcode;
+	BOOT_MOUSE_REPORT buf;		//USB mouse report
+	BOOT_KBD_REPORT kbdbuf;
+
+	BYTE runningdebugflag = 0;//flag to dump out a bunch of information when we first get to USB_STATE_RUNNING
+	BYTE errorflag = 0; //flag once we get an error device so we don't keep dumping out state info
+	BYTE device;
+	WORD keycode;
+	clock_t start, end;
+
+	int seconds = 0;
+	//This is the function you call for your week 2 demo
+	char color_string[80];
+    int fg, bg, x, y;
+	double currX = 5; 
+	double currY = 5;
+	textVGAColorClr();
+	//initialize palette
+	for (int i = 0; i < 16; i++)
+	{
+		setColorPalette (i, colors[i].red, colors[i].green, colors[i].blue);
+		//printf("Palette %d : %x\n", i, vga_ctrl->palette[i>>1]>>1);
+	}
+
+	printf("initializing MAX3421E...\n");
+	MAX3421E_init();
+	printf("initializing USB...\n");
+	USB_init();
+
+	while (1)
+	{
+		start = clock();
+		MAX3421E_Task();
+		USB_Task();
+
+		rcode = kbdPoll(&kbdbuf);
+		int kcode = kbdbuf.keycode[0];
+//		setKeycode(kbdbuf.keycode[0]);
+//		printSignedHex0(kbdbuf.keycode[0]);
+//		printSignedHex1(kbdbuf.keycode[1]);
+		printf("keycode: %d\n", kcode);
+		textVGADrawColorText (" ", currX, currY, bg, fg);
+
+		if (kcode == RIGHT && currX < 40) {
+			currX += 10;
+		}
+		else if (kcode == DOWN && currY < 25) {
+			currY += (double) (86) / 16;
+		}
+		else if (kcode == LEFT && currX > 5) {
+			currX -= 10;
+		}
+		else if (kcode == UP && currY > 5) {
+			currY -= (double) (86) / 16;
+		}
+		end = clock();
+		fg = 0;
+		bg = 15;
+		int newSeconds = (seconds % 60) % 10;
+		int newSeconds2 = (seconds % 60) / 10;
+		sprintf(color_string, "%d:%d%d", seconds / 60, newSeconds2, newSeconds);
+//		printf("%d\n", seconds % 60);
+		x = 51;//rand() % (80-strlen(color_string));
+		y = 1;//rand() % 30;
+		textVGADrawColorText (color_string, x, y, bg, fg);
+		textVGADrawColorText ("_", currX, currY, bg, fg);
+		seconds++;
+
+		usleep (200000 - (double) (end - start) / CLOCKS_PER_SEC);
+		// printf("hi");
+	}
+}
+
+
+
+ void keyToText() {
+ 	char guess[5];
+ 	int fg, bg, x, y;
+ 	textVGAColorClr();
+ 	//initialize palette
+ 	for (int i = 0; i < 16; i++)
+ 	{
+ 		setColorPalette (i, colors[i].red, colors[i].green, colors[i].blue);
+ 		//printf("Palette %d : %x\n", i, vga_ctrl->palette[i>>1]>>1);
+ 	}
+
+ 	while (1) {
+ 		printf("Hello\n");
+ 		char one_char [2] = "A";
+ 		x = 25;
+ 		y = 65;
+ 		fg = 0;
+ 		bg = 15;
+ 		textVGADrawColorText(one_char, x, y, bg, fg);
+ 		usleep (100000);
+ 	}
+ }

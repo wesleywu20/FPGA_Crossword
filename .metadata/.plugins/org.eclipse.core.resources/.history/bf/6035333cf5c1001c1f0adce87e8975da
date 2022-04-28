@@ -1,0 +1,7 @@
+#include "text_mode_vga_color.h"
+
+int main() {
+//	keyToText();
+	textVGAColorScreenSaver();
+	return 0;
+}

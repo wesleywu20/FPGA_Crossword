@@ -1,0 +1,6 @@
+14:32:43 **** Clean-only build of configuration Nios II for project crossword2_bsp ****
+make clean 
+[BSP clean complete]
+
+14:32:45 Build Finished (took 1s.975ms)
+
