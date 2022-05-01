@@ -25,8 +25,8 @@ FGD_R/G/B = Foreground color, flipped with background when Inv bit is set
 `define NUM_REGS 601 //80*30 characters / 4 characters per register
 `define CTRL_REG 600 //index of control register
 `define LINE_WIDTH 3
-`define CROSSWORD_RIGHT_EDGE 400
-`define HORIZONTAL_DIV 86
+`define CROSSWORD_RIGHT_EDGE 404
+`define HORIZONTAL_DIV 80
 `define VERTICAL_DIV 80
 
 module vga_text_avl_interface (
@@ -169,7 +169,9 @@ begin
     begin
         if ( ((drawX + 1) >= `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawX <= `CROSSWORD_RIGHT_EDGE + `LINE_WIDTH / 2) || // drawing right edge of crossword
              ((480 - (drawY + 1)) % `HORIZONTAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2) || // drawing crossword grid horizontal lines)
-             ((drawX + 1) % `VERTICAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawY >= 50) // drawing crossword grid vertical lines
+             ((drawX - 3) % `VERTICAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawY >= 80) || // drawing crossword grid vertical lines
+             (drawX < 3 && drawY >= 80)
+
         ) 
         begin
             r <= 0;
