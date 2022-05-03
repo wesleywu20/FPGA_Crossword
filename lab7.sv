@@ -117,6 +117,7 @@ module lab7 (
 	stopwatch gameSW(.clk(MAX10_CLK1_50), .reset(Reset_SW), .run(Start_SW),
 					.HEX0(hex_num_0), .HEX1(hex_num_1), .HEX2(hex_num_3), .HEX3(hex_num_4));
 
+
 	//assign signs = 2'b00;
 	//assign hex_num_4 = 4'h4;
 	//assign hex_num_3 = 4'h3;
@@ -162,6 +163,7 @@ module lab7 (
 		.keycode_export(keycode),
 		.start_sw_export(Start_SW),
 		.reset_sw_export(Reset_SW),
+		.text_ctrl_keycode(keycode),
 		
 		//VGA
 		.vga_port_red (VGA_R),

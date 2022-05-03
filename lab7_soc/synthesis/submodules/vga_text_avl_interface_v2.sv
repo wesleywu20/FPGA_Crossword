@@ -45,6 +45,8 @@ module vga_text_avl_interface (
 	input  logic [11:0] AVL_ADDR,			// Avalon-MM Address
 	input  logic [31:0] AVL_WRITEDATA,		// Avalon-MM Write Data
 	output logic [31:0] AVL_READDATA,		// Avalon-MM Read Data
+
+    input  logic [7:0] keycode,
 	
 	// Exported Conduit (mapped to VGA port - make sure you export in Platform Designer)
 	output logic [3:0]  red, green, blue,	// VGA color channels (mapped to output pins in top-level)
@@ -63,7 +65,7 @@ logic [7:0] charcode, COLOR;
 // logic [11:0] COLOR_DATA_ADDR;
 logic [31:0] COLOR_DATA, CHARS;
 logic [11:0] ram_addr;
-
+logic [9:0] highlightX, highlightY;
 
 
 
@@ -90,22 +92,12 @@ johncena ram(.address_a(AVL_ADDR), .address_b(ram_addr),
              .wren_a(AVL_WRITE), .wren_b(1'b0),
              .q_a(AVL_READDATA), .q_b(CHARS));
    
-// Read and write from AVL interface to register block, note that READ waitstate = 1, so this should be in always_ff
-// always_ff @(posedge CLK) 
-// begin
-// 	if (AVL_CS && AVL_WRITE)
-// 		begin
-// 			if (AVL_BYTE_EN[0]) LOCAL_REG[AVL_ADDR][7:0] = AVL_WRITEDATA[7:0];
-// 			if (AVL_BYTE_EN[1]) LOCAL_REG[AVL_ADDR][15:8] = AVL_WRITEDATA[15:8];
-// 			if (AVL_BYTE_EN[2]) LOCAL_REG[AVL_ADDR][23:16] = AVL_WRITEDATA[23:16];
-// 			if (AVL_BYTE_EN[3]) LOCAL_REG[AVL_ADDR][31:24] = AVL_WRITEDATA[31:24];
-// 		end
-// 	else
-// 		begin
-// 		if (AVL_CS && AVL_READ) 
-// 			AVL_READDATA <= LOCAL_REG[AVL_ADDR];
-// 		end
-// end
+// module  highlight (  input Reset, frame_clk,
+// 					    input [7:0] keycode,
+//                		output [9:0]  highlightX, highlightY);
+highlight hl(.Reset(RESET), .frame_clk(vs),
+             .keycode(keycode),
+             .highlightX(highlightX), .highlightY(highlightY));
 
 //handle drawing (may either be combinational or sequential - or both).
 //  [character1 | color1 | character2 | color2]
@@ -122,17 +114,6 @@ always_comb
 begin
     COLOR = CHARS[{drawX[3],4'b0000}+:8];
 end
-
-// if (COLOR[4] == 0) // if the index of the first color is even
-//     COLOR_DATA[12:1] = PALETTE_REG[COLOR[7:5]][12:1]; // load the 12-bit background color of the palette register whose index is given by color / 2 into the background color 
-// else
-//     COLOR_DATA[24:13] = PALETTE_REG[COLOR[7:5]][24:13]; // else, load the 12-bit foreground color of the palette register whose index is given by color / 2 into the foreground color
-// if (COLOR[0] == 0) // if the index of the second color is even
-//     COLOR_DATA[12:1] = PALETTE_REG[COLOR[3:1]][12:1]; // load the 12-bit background color of the palette register whose index is given by color / 2 into the background color  
-// else
-//     COLOR_DATA[24:13] = PALETTE_REG[COLOR[3:1]][24:13]; // else, load the 12-bit foreground color of the palette register whose index is given by color / 2 into the foreground color
-
-
 
 assign charcode = CHARS[{drawX[3], 4'b1000} +: 8];
 
@@ -167,11 +148,10 @@ begin
     // end
     if (blank)
     begin
-        if ( ((drawX + 1) >= `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawX <= `CROSSWORD_RIGHT_EDGE + `LINE_WIDTH / 2) || // drawing right edge of crossword
-             ((480 - (drawY + 1)) % `HORIZONTAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2) || // drawing crossword grid horizontal lines)
-             ((drawX - 3) % `VERTICAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawY >= 80) || // drawing crossword grid vertical lines
-             (drawX < 3 && drawY >= 80)
-
+        if (((drawX + 1) >= `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawX <= `CROSSWORD_RIGHT_EDGE + `LINE_WIDTH / 2) || // drawing right edge of crossword
+            ((480 - (drawY + 1)) % `HORIZONTAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2) || // drawing crossword grid horizontal lines)
+            ((drawX - 3) % `VERTICAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawY >= 80) || // drawing crossword grid vertical lines
+            (drawX < 3 && drawY >= 80)
         ) 
         begin
             r <= 0;
@@ -183,6 +163,13 @@ begin
             r <= FGD_R;
             g <= FGD_G;
             b <= FGD_B;
+        end
+        else if ((drawX >= highlightX && drawX <= highlightX + 79) &&
+                (drawY >= highlightY && drawY <= highlightY + 79))
+        begin
+            r <= 4'b1111;
+            g <= 4'b1111;
+            b <= 4'b0011;
         end       
         else // draw background
         begin
@@ -190,8 +177,6 @@ begin
             g <= 4'b1111;
             b <= 4'b1111;
         end
-        
-             
     end
     else
     begin

@@ -1,112 +1,119 @@
-//-------------------------------------------------------------------------
-//    Ball.sv                                                            --
-//    Viral Mehta                                                        --
-//    Spring 2005                                                        --
-//                                                                       --
-//    Modified by Stephen Kempf 03-01-2006                               --
-//                              03-12-2007                               --
-//    Translated by Joe Meng    07-07-2013                               --
-//    Fall 2014 Distribution                                             --
-//                                                                       --
-//    For use with ECE 298 Lab 7                                         --
-//    UIUC ECE Department                                                --
-//-------------------------------------------------------------------------
-
-
 module  highlight ( input Reset, frame_clk,
 					input [7:0] keycode,
-               output [9:0]  lineX, lineY);
+               		output [9:0]  highlightX, highlightY);
     
-    logic [9:0] Ball_X_Pos, Ball_X_Motion, Ball_Y_Pos, Ball_Y_Motion, Ball_Size;
+	logic [9:0] HL_X_Pos, HL_Y_Pos;
+	logic atLeftEdge, atRightEdge, atTopEdge, atBotEdge;
+	logic [7:0] xVel, yVel;
+	logic [3:0] edges;
+	assign edges = {atLeftEdge, atRightEdge, atTopEdge, atBotEdge};
+	logic leftPressed, rightPressed, upPressed, downPressed;
+
+	// assign atLeftEdge = (HL_X_Pos <= HL_X_Min) ? 1'b1 : 1'b0;
+	// assign atRightEdge = (HL_X_Pos >= HL_X_Max) ? 1'b1 : 1'b0;
+	// assign atTopEdge = (HL_Y_Pos <= HL_Y_Min) ? 1'b1 : 1'b0;
+	// assign atBotEdge = (HL_X_Pos >= HL_Y_Max) ? 1'b1 : 1'b0;
+
+	assign rightPressed = (keycode == 8'h4F) ? 1'b1 : 1'b0;
+	assign leftPressed = (keycode == 8'h50) ? 1'b1 : 1'b0;
+	assign downPressed = (keycode == 8'h51) ? 1'b1 : 1'b0;
+	assign upPressed = (keycode == 8'h52) ? 1'b1 : 1'b0;
 	 
-    parameter [9:0] Ball_X_Center=320;  // Center position on the X axis
-    parameter [9:0] Ball_Y_Center=240;  // Center position on the Y axis
-    parameter [9:0] Ball_X_Min=0;       // Leftmost point on the X axis
-    parameter [9:0] Ball_X_Max=639;     // Rightmost point on the X axis
-    parameter [9:0] Ball_Y_Min=0;       // Topmost point on the Y axis
-    parameter [9:0] Ball_Y_Max=479;     // Bottommost point on the Y axis
-    parameter [9:0] Ball_X_Step=1;      // Step size on the X axis
-    parameter [9:0] Ball_Y_Step=1;      // Step size on the Y axis
+    parameter [9:0] HL_X_Corner = 4;  
+    parameter [9:0] HL_Y_Corner = 80;  
+    parameter [9:0] HL_X_Min = 4;      
+    parameter [9:0] HL_X_Max = 324;     
+    parameter [9:0] HL_Y_Min = 80;       
+    parameter [9:0] HL_Y_Max = 400;
 
-    assign Ball_Size = 4;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
-   
-    always_ff @ (posedge Reset or posedge frame_clk )
-    begin: Move_Ball
-        if (Reset)  // Asynchronous Reset
-        begin 
-            Ball_Y_Motion <= 10'd0; //Ball_Y_Step;
-				Ball_X_Motion <= 10'd0; //Ball_X_Step;
-				Ball_Y_Pos <= Ball_Y_Center;
-				Ball_X_Pos <= Ball_X_Center;
+	always_ff @ (posedge Reset or 
+				 posedge rightPressed or posedge leftPressed or 
+				 posedge downPressed or posedge upPressed)
+	begin
+		if (Reset)  // Asynchronous Reset
+        begin
+			HL_X_Pos <= HL_X_Corner;
+			HL_Y_Pos <= HL_Y_Corner;
         end
-           
-        else 
-        begin 
-				 if ( (Ball_Y_Pos + Ball_Size) >= Ball_Y_Max )  // Ball is at the bottom edge, BOUNCE!
-					  Ball_Y_Motion <= (~ (Ball_Y_Step) + 1'b1);  // 2's complement.
-					  
-				 else if ( (Ball_Y_Pos - Ball_Size) <= Ball_Y_Min )  // Ball is at the top edge, BOUNCE!
-					  Ball_Y_Motion <= Ball_Y_Step;
-					  
-				  else if ( (Ball_X_Pos + Ball_Size) >= Ball_X_Max )  // Ball is at the Right edge, BOUNCE!
-					  Ball_X_Motion <= (~ (Ball_X_Step) + 1'b1);  // 2's complement.
-					  
-				 else if ( (Ball_X_Pos - Ball_Size) <= Ball_X_Min )  // Ball is at the Left edge, BOUNCE!
-					  Ball_X_Motion <= Ball_X_Step;
-					  
-				 else 
-					  Ball_Y_Motion <= Ball_Y_Motion;  // Ball is somewhere in the middle, don't bounce, just keep moving
-					  
-				 
-				 case (keycode)
-					8'h04 : begin
 
-								Ball_X_Motion <= -1;//A
-								Ball_Y_Motion<= 0;
-							  end
-					        
-					8'h07 : begin
-								
-					        Ball_X_Motion <= 1;//D
-							  Ball_Y_Motion <= 0;
-							  end
+		else if (rightPressed)
+			begin
+			if (!atRightEdge) 
+				HL_X_Pos <= HL_X_Pos + 80;
+			end
 
-							  
-					8'h16 : begin
+		else if (leftPressed)
+			begin
+			if (!atLeftEdge)
+				HL_X_Pos <= HL_X_Pos - 80;
+			end
 
-					        Ball_Y_Motion <= 1;//S
-							  Ball_X_Motion <= 0;
-							 end
-							  
-					8'h1A : begin
-					        Ball_Y_Motion <= -1;//W
-							  Ball_X_Motion <= 0;
-							 end	  
-					default: ;
-			   endcase
-				 
-				 Ball_Y_Pos <= (Ball_Y_Pos + Ball_Y_Motion);  // Update ball position
-				 Ball_X_Pos <= (Ball_X_Pos + Ball_X_Motion);
-			
-			
-	  /**************************************************************************************
-	    ATTENTION! Please answer the following quesiton in your lab report! Points will be allocated for the answers!
-		 Hidden Question #2/2:
-          Note that Ball_Y_Motion in the above statement may have been changed at the same clock edge
-          that is causing the assignment of Ball_Y_pos.  Will the new value of Ball_Y_Motion be used,
-          or the old?  How will this impact behavior of the ball during a bounce, and how might that 
-          interact with a response to a keypress?  Can you fix it?  Give an answer in your Post-Lab.
-      **************************************************************************************/
-      
-			
-		end  
+		else if (downPressed)
+			begin
+			if (!atBotEdge) 
+				HL_Y_Pos <= HL_Y_Pos + 80;
+			end
+
+		else if (upPressed)
+			begin
+			if (!atTopEdge) 
+				HL_Y_Pos <= HL_Y_Pos - 80;
+			end
+	end
+		
+		
+	
+    always_ff @ (posedge frame_clk)
+    begin: Move_HL
+
+		// if (HL_X_Pos == HL_X_Min) atLeftEdge <= 1;
+		// else atLeftEdge <= 0;
+
+		// if (HL_X_Pos == HL_X_Max) atRightEdge <= 1;
+		// else atRightEdge <= 0;
+
+		// if (HL_Y_Pos == HL_Y_Min) atTopEdge <= 1;
+		// else atTopEdge <= 0;
+
+		// if (HL_Y_Pos == HL_Y_Max) atBotEdge <= 1;
+		// else atBotEdge <= 0;
+
+			// case ({keycode, edges})
+			// 	// 0000, 0001, 0010, 0011, 1000, 1001, 1010, 1011
+			// 	{8'h4F, 4'b0000}, {8'h4F, 4'b0001}, {8'h4F, 4'b0010}, {8'h4F, 4'b0011}, {8'h4F, 4'b1000}, {8'h4F, 4'b1001}, {8'h4F, 4'b1010}, {8'h4F, 4'b1011} : // right
+			// 	begin	
+			// 		xVel <= 80;
+			// 		yVel <= 0;
+			// 	end
+			// 	// 0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111
+			// 	{8'h50, 4'b0000}, {8'h50, 4'b0001}, {8'h50, 4'b0010}, {8'h50, 4'b0011}, {8'h50, 4'b0100}, {8'h50, 4'b0101}, {8'h50, 4'b0110}, {8'h50, 4'b0111} : // left
+			// 	begin	
+			// 		xVel <= -80;
+			// 		yVel <= 0;
+			// 	end
+			// 	// 0000, 0010, 0100, 0110, 1000, 1010, 1100, 1110
+			// 	{8'h51, 4'b0000}, {8'h51, 4'b0010}, {8'h51, 4'b0100}, {8'h51, 4'b0110}, {8'h51, 4'b1000}, {8'h51, 4'b1010}, {8'h51, 4'b1100}, {8'h51, 4'b1110} : // down
+			// 	begin	
+			// 		xVel <= 0;
+			// 		yVel <= 80; 
+			// 	end
+			// 	// 0000, 0001, 0100, 0101, 1000, 1001, 1100, 1101
+			// 	{8'h52, 4'b0000}, {8'h52, 4'b0001}, {8'h52, 4'b0100}, {8'h52, 4'b0101}, {8'h52, 4'b1000}, {8'h52, 4'b1001}, {8'h52, 4'b1100}, {8'h52, 4'b1101} : // up
+			// 	begin
+			// 		xVel <= 0;
+			// 		yVel <= -80;
+			// 	default:
+			// 	begin
+			// 		xVel <= 0;
+			// 		yVel <= 0;
+			// 	end
+			// endcase
+			// HL_X_Pos <= HL_X_Pos + xVel;
+			// HL_Y_Pos <= HL_Y_Pos + yVel;
+		
     end
-       
-    assign BallX = Ball_X_Pos;
-   
-    assign BallY = Ball_Y_Pos;
-   
-    assign BallS = Ball_Size;
     
+    assign highlightX = HL_X_Pos;
+    assign highlightY = HL_Y_Pos;   
 
 endmodule

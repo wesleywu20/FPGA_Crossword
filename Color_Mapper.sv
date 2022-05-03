@@ -13,51 +13,55 @@
 //-------------------------------------------------------------------------
 
 
-module  color_mapper ( input        [9:0] LineX, LineY, DrawX, DrawY,
-                       output logic [7:0]  Red, Green, Blue );
-    
-    logic ball_on;
-	 
- /* Old Ball: Generated square box by checking if the current pixel is within a square of length
-    2*Ball_Size, centered at (BallX, BallY).  Note that this requires unsigned comparisons.
-	 
-    if ((DrawX >= BallX - Ball_size) &&
-       (DrawX <= BallX + Ball_size) &&
-       (DrawY >= BallY - Ball_size) &&
-       (DrawY <= BallY + Ball_size))
+module  color_mapper (  input blank, pxl_clk, act_pix,
+                        input [3:0] FGD_R, FGD_G, FGD_B,
+                        input [9:0]  DrawX, DrawY,
+                        output [3:0]  Red, Green, Blue );
+	logic [3:0] r, g, b;
+    always_ff @ (posedge pxl_clk)
+    begin
+    // if (RESET == 1'b0)
+    // begin
+    // 	r <= 0;
+    // 	g <= 0;
+    // 	b <= 0;
+    // end
+    if (blank)
+    begin
+        if ( ((DrawX + 1) >= `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && DrawX <= `CROSSWORD_RIGHT_EDGE + `LINE_WIDTH / 2) || // drawing right edge of crossword
+             ((480 - (DrawY + 1)) % `HORIZONTAL_DIV == 0 && DrawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2) || // drawing crossword grid horizontal lines)
+             ((DrawX - 3) % `VERTICAL_DIV == 0 && DrawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && DrawY >= 80) || // drawing crossword grid vertical lines
+             (DrawX < 3 && DrawY >= 80)
 
-     New Ball: Generates (pixelated) circle by using the standard circle formula.  Note that while 
-     this single line is quite powerful descriptively, it causes the synthesis tool to use up three
-     of the 12 available multipliers on the chip!  Since the multiplicants are required to be signed,
-	  we have to first cast them from logic to int (signed by default) before they are multiplied). */
-	  
-    int DistX, DistY, Size;
-	 assign DistX = DrawX - BallX;
-    assign DistY = DrawY - BallY;
-    assign Size = Ball_size;
-	  
-    always_comb
-    begin: LineOn
-        if ( ( DistX*DistX + DistY*DistY) <= (Size * Size) ) 
-            ball_on = 1'b1;
-        else 
-            ball_on = 1'b0;
-     end 
-       
-    always_comb
-    begin:RGB_Display
-        if ((ball_on == 1'b1)) 
+        ) 
+        begin
+            r <= 0;
+            g <= 0;
+            b <= 0;
+        end
+        else if (act_pix == 1'b1) 
         begin 
-            Red = 8'hff;
-            Green = 8'h55;
-            Blue = 8'h00;
+            r <= FGD_R;
+            g <= FGD_G;
+            b <= FGD_B;
         end       
-        else 
-        begin 
-            Red = 8'h00; 
-            Green = 8'h00;
-            Blue = 8'h7f - DrawX[9:3];
-        end      
-    end 
+        else // draw background
+        begin
+            r <= 4'b1111;
+            g <= 4'b1111;
+            b <= 4'b1111;
+        end
+    end
+    else
+    begin
+        r <= 0;
+        g <= 0;
+        b <= 0;
+    end
+end
+
+assign Red = r;
+assign Green = g;
+assign Blue = b;
     
 endmodule

@@ -934,3 +934,319 @@ Contains: Could not delete: C:\crossword2_bsp\Makefile.
 
 !ENTRY com.altera.sbtgui.launch 1 0 2022-05-01 01:57:56.148
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-01 22:54:41.844
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-01 22:54:45.582
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-01 22:56:48.670
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-01 22:56:50.285
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-01 22:56:54.062
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-01 23:48:41.842
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-01 23:48:46.122
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbt4e.launch 4 4 2022-05-02 02:14:41.093
+!MESSAGE nios2-elf-gcc -print-multi-lib: Unable to retrieve any multi-lib path
+!STACK 0
+java.lang.Exception: nios2-elf-gcc -print-multi-lib: Unable to retrieve any multi-lib path
+	at com.altera.sbt4e.launch.sourcelookup.Nios2GnuSourceLookupDirector.getMultiLibSourceContainer(Nios2GnuSourceLookupDirector.java:107)
+	at com.altera.sbt4e.launch.sourcelookup.Nios2GnuSourceLookupDirector.initializeDefaults(Nios2GnuSourceLookupDirector.java:43)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.initializeSourceLocator(LaunchConfiguration.java:689)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:880)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 02:14:42.863
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 02:14:47.053
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 15:14:52.742
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 15:14:57.535
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 16:32:23.727
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 16:32:28.796
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 18:45:51.985
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 18:45:57.157
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:00:16.087
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:00:20.415
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:01:15.761
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:01:17.173
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:01:21.313
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:30:35.567
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:30:37.302
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:30:41.661
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:33:35.056
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:33:36.667
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:33:40.771
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:37:38.675
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:37:40.209
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:37:44.381
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:53:29.327
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:53:31.100
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:53:35.465
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:57:03.415
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:57:05.257
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-02 23:57:10.047
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:01:34.810
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:01:36.413
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:01:40.543
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:03:18.299
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:03:19.865
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:03:24.051
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:16:48.478
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:16:50.054
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:16:54.153
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:19:42.605
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:19:44.148
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:19:48.434
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:21:29.056
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:21:30.560
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:21:34.692
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbt4e.launch 4 4 2022-05-03 00:23:12.376
+!MESSAGE nios2-elf-gcc -print-multi-lib: Unable to retrieve any multi-lib path
+!STACK 0
+java.lang.Exception: nios2-elf-gcc -print-multi-lib: Unable to retrieve any multi-lib path
+	at com.altera.sbt4e.launch.sourcelookup.Nios2GnuSourceLookupDirector.getMultiLibSourceContainer(Nios2GnuSourceLookupDirector.java:107)
+	at com.altera.sbt4e.launch.sourcelookup.Nios2GnuSourceLookupDirector.initializeDefaults(Nios2GnuSourceLookupDirector.java:43)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupPanel.initializeFrom(SourceLookupPanel.java:195)
+	at org.eclipse.debug.ui.sourcelookup.SourceLookupTab.initializeFrom(SourceLookupTab.java:94)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupWrapper.initializeFrom(LaunchConfigurationTabGroupWrapper.java:208)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.displayInstanceTabs(LaunchConfigurationTabGroupViewer.java:766)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer$8.run(LaunchConfigurationTabGroupViewer.java:637)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.inputChanged(LaunchConfigurationTabGroupViewer.java:654)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.setInput0(LaunchConfigurationTabGroupViewer.java:615)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationTabGroupViewer.setInput(LaunchConfigurationTabGroupViewer.java:590)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.handleLaunchConfigurationSelectionChanged(LaunchConfigurationsDialog.java:960)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog$3.selectionChanged(LaunchConfigurationsDialog.java:573)
+	at org.eclipse.jface.viewers.StructuredViewer$3.run(StructuredViewer.java:877)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:50)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:173)
+	at org.eclipse.jface.viewers.StructuredViewer.firePostSelectionChanged(StructuredViewer.java:874)
+	at org.eclipse.jface.viewers.StructuredViewer.setSelection(StructuredViewer.java:1734)
+	at org.eclipse.jface.viewers.TreeViewer.setSelection(TreeViewer.java:1093)
+	at org.eclipse.jface.viewers.Viewer.setSelection(Viewer.java:388)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.doInitialTreeSelection(LaunchConfigurationsDialog.java:613)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.initializeContent(LaunchConfigurationsDialog.java:1101)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.createContents(LaunchConfigurationsDialog.java:446)
+	at org.eclipse.jface.window.Window.create(Window.java:430)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1096)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.create(LaunchConfigurationsDialog.java:374)
+	at org.eclipse.jface.window.Window.open(Window.java:792)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationsDialog.open(LaunchConfigurationsDialog.java:1154)
+	at org.eclipse.debug.ui.DebugUITools$2.run(DebugUITools.java:619)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(DebugUITools.java:627)
+	at org.eclipse.debug.ui.DebugUITools.openLaunchConfigurationDialogOnGroup(DebugUITools.java:560)
+	at org.eclipse.debug.ui.actions.OpenLaunchDialogAction.run(OpenLaunchDialogAction.java:82)
+	at org.eclipse.debug.ui.actions.OpenLaunchDialogAction.runWithEvent(OpenLaunchDialogAction.java:91)
+	at org.eclipse.ui.internal.PluginAction.runWithEvent(PluginAction.java:237)
+	at org.eclipse.ui.internal.WWinPluginAction.runWithEvent(WWinPluginAction.java:228)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:595)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:511)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:420)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3769)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:23:28.887
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:23:30.454
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:23:34.586
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:24:41.998
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:24:43.587
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:24:47.711
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:27:39.079
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:27:40.640
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:27:44.782
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:28:32.691
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:28:34.300
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:28:38.482
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:31:16.678
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:31:18.250
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:31:22.487
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:32:13.876
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:32:15.403
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:32:19.542
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:34:00.515
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:34:02.090
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 00:34:06.257
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 01:10:49.249
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 01:10:50.853
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 01:10:55.012
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 01:15:08.723
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 01:15:10.303
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x220]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-05-03 01:15:14.504
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x220 /cygdrive/c/ECE385_Lab7/software/crossword/crossword.elf]

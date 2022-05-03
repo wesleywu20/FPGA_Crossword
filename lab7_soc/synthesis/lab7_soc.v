@@ -26,6 +26,7 @@ module lab7_soc (
 		output wire        spi0_SCLK,                      //                        .SCLK
 		output wire        spi0_SS_n,                      //                        .SS_n
 		output wire        start_sw_export,                //                start_sw.export
+		input  wire [7:0]  text_ctrl_keycode,              //               text_ctrl.keycode
 		input  wire        usb_gpx_export,                 //                 usb_gpx.export
 		input  wire        usb_irq_export,                 //                 usb_irq.export
 		output wire        usb_rst_export,                 //                 usb_rst.export
@@ -164,7 +165,8 @@ module lab7_soc (
 		.green         (vga_port_green),                                                       //             .green
 		.red           (vga_port_red),                                                         //             .red
 		.hs            (vga_port_hs),                                                          //             .hs
-		.vs            (vga_port_vs)                                                           //             .vs
+		.vs            (vga_port_vs),                                                          //             .vs
+		.keycode       (text_ctrl_keycode)                                                     //     keyboard.keycode
 	);
 
 	lab7_soc_jtag_uart_0 jtag_uart_0 (

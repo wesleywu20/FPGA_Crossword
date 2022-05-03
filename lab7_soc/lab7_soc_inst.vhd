@@ -6,6 +6,7 @@
 			led_wire_export                : out   std_logic_vector(7 downto 0);                     -- export
 			leds_export                    : out   std_logic_vector(13 downto 0);                    -- export
 			reset_reset_n                  : in    std_logic                     := 'X';             -- reset_n
+			reset_sw_export                : out   std_logic;                                        -- export
 			sdram_clk_clk                  : out   std_logic;                                        -- clk
 			sdram_wire_addr                : out   std_logic_vector(12 downto 0);                    -- addr
 			sdram_wire_ba                  : out   std_logic_vector(1 downto 0);                     -- ba
@@ -20,6 +21,8 @@
 			spi0_MOSI                      : out   std_logic;                                        -- MOSI
 			spi0_SCLK                      : out   std_logic;                                        -- SCLK
 			spi0_SS_n                      : out   std_logic;                                        -- SS_n
+			start_sw_export                : out   std_logic;                                        -- export
+			text_ctrl_keycode              : in    std_logic_vector(7 downto 0)  := (others => 'X'); -- keycode
 			usb_gpx_export                 : in    std_logic                     := 'X';             -- export
 			usb_irq_export                 : in    std_logic                     := 'X';             -- export
 			usb_rst_export                 : out   std_logic;                                        -- export
@@ -27,9 +30,7 @@
 			vga_port_green                 : out   std_logic_vector(3 downto 0);                     -- green
 			vga_port_red                   : out   std_logic_vector(3 downto 0);                     -- red
 			vga_port_hs                    : out   std_logic;                                        -- hs
-			vga_port_vs                    : out   std_logic;                                        -- vs
-			start_sw_export                : out   std_logic;                                        -- export
-			reset_sw_export                : out   std_logic                                         -- export
+			vga_port_vs                    : out   std_logic                                         -- vs
 		);
 	end component lab7_soc;
 
@@ -41,6 +42,7 @@
 			led_wire_export                => CONNECTED_TO_led_wire_export,                --                led_wire.export
 			leds_export                    => CONNECTED_TO_leds_export,                    --                    leds.export
 			reset_reset_n                  => CONNECTED_TO_reset_reset_n,                  --                   reset.reset_n
+			reset_sw_export                => CONNECTED_TO_reset_sw_export,                --                reset_sw.export
 			sdram_clk_clk                  => CONNECTED_TO_sdram_clk_clk,                  --               sdram_clk.clk
 			sdram_wire_addr                => CONNECTED_TO_sdram_wire_addr,                --              sdram_wire.addr
 			sdram_wire_ba                  => CONNECTED_TO_sdram_wire_ba,                  --                        .ba
@@ -55,6 +57,8 @@
 			spi0_MOSI                      => CONNECTED_TO_spi0_MOSI,                      --                        .MOSI
 			spi0_SCLK                      => CONNECTED_TO_spi0_SCLK,                      --                        .SCLK
 			spi0_SS_n                      => CONNECTED_TO_spi0_SS_n,                      --                        .SS_n
+			start_sw_export                => CONNECTED_TO_start_sw_export,                --                start_sw.export
+			text_ctrl_keycode              => CONNECTED_TO_text_ctrl_keycode,              --               text_ctrl.keycode
 			usb_gpx_export                 => CONNECTED_TO_usb_gpx_export,                 --                 usb_gpx.export
 			usb_irq_export                 => CONNECTED_TO_usb_irq_export,                 --                 usb_irq.export
 			usb_rst_export                 => CONNECTED_TO_usb_rst_export,                 --                 usb_rst.export
@@ -62,8 +66,6 @@
 			vga_port_green                 => CONNECTED_TO_vga_port_green,                 --                        .green
 			vga_port_red                   => CONNECTED_TO_vga_port_red,                   --                        .red
 			vga_port_hs                    => CONNECTED_TO_vga_port_hs,                    --                        .hs
-			vga_port_vs                    => CONNECTED_TO_vga_port_vs,                    --                        .vs
-			start_sw_export                => CONNECTED_TO_start_sw_export,                --                start_sw.export
-			reset_sw_export                => CONNECTED_TO_reset_sw_export                 --                reset_sw.export
+			vga_port_vs                    => CONNECTED_TO_vga_port_vs                     --                        .vs
 		);
 

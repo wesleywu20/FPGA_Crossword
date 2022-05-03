@@ -5,6 +5,7 @@
 		.led_wire_export                (<connected-to-led_wire_export>),                //                led_wire.export
 		.leds_export                    (<connected-to-leds_export>),                    //                    leds.export
 		.reset_reset_n                  (<connected-to-reset_reset_n>),                  //                   reset.reset_n
+		.reset_sw_export                (<connected-to-reset_sw_export>),                //                reset_sw.export
 		.sdram_clk_clk                  (<connected-to-sdram_clk_clk>),                  //               sdram_clk.clk
 		.sdram_wire_addr                (<connected-to-sdram_wire_addr>),                //              sdram_wire.addr
 		.sdram_wire_ba                  (<connected-to-sdram_wire_ba>),                  //                        .ba
@@ -19,6 +20,8 @@
 		.spi0_MOSI                      (<connected-to-spi0_MOSI>),                      //                        .MOSI
 		.spi0_SCLK                      (<connected-to-spi0_SCLK>),                      //                        .SCLK
 		.spi0_SS_n                      (<connected-to-spi0_SS_n>),                      //                        .SS_n
+		.start_sw_export                (<connected-to-start_sw_export>),                //                start_sw.export
+		.text_ctrl_keycode              (<connected-to-text_ctrl_keycode>),              //               text_ctrl.keycode
 		.usb_gpx_export                 (<connected-to-usb_gpx_export>),                 //                 usb_gpx.export
 		.usb_irq_export                 (<connected-to-usb_irq_export>),                 //                 usb_irq.export
 		.usb_rst_export                 (<connected-to-usb_rst_export>),                 //                 usb_rst.export
@@ -26,8 +29,6 @@
 		.vga_port_green                 (<connected-to-vga_port_green>),                 //                        .green
 		.vga_port_red                   (<connected-to-vga_port_red>),                   //                        .red
 		.vga_port_hs                    (<connected-to-vga_port_hs>),                    //                        .hs
-		.vga_port_vs                    (<connected-to-vga_port_vs>),                    //                        .vs
-		.start_sw_export                (<connected-to-start_sw_export>),                //                start_sw.export
-		.reset_sw_export                (<connected-to-reset_sw_export>)                 //                reset_sw.export
+		.vga_port_vs                    (<connected-to-vga_port_vs>)                     //                        .vs
 	);
 

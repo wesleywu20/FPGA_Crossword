@@ -6,6 +6,7 @@ module lab7_soc (
 	led_wire_export,
 	leds_export,
 	reset_reset_n,
+	reset_sw_export,
 	sdram_clk_clk,
 	sdram_wire_addr,
 	sdram_wire_ba,
@@ -20,6 +21,8 @@ module lab7_soc (
 	spi0_MOSI,
 	spi0_SCLK,
 	spi0_SS_n,
+	start_sw_export,
+	text_ctrl_keycode,
 	usb_gpx_export,
 	usb_irq_export,
 	usb_rst_export,
@@ -27,9 +30,7 @@ module lab7_soc (
 	vga_port_green,
 	vga_port_red,
 	vga_port_hs,
-	vga_port_vs,
-	start_sw_export,
-	reset_sw_export);	
+	vga_port_vs);	
 
 	input		clk_clk;
 	input	[1:0]	key_external_connection_export;
@@ -37,6 +38,7 @@ module lab7_soc (
 	output	[7:0]	led_wire_export;
 	output	[13:0]	leds_export;
 	input		reset_reset_n;
+	output		reset_sw_export;
 	output		sdram_clk_clk;
 	output	[12:0]	sdram_wire_addr;
 	output	[1:0]	sdram_wire_ba;
@@ -51,6 +53,8 @@ module lab7_soc (
 	output		spi0_MOSI;
 	output		spi0_SCLK;
 	output		spi0_SS_n;
+	output		start_sw_export;
+	input	[7:0]	text_ctrl_keycode;
 	input		usb_gpx_export;
 	input		usb_irq_export;
 	output		usb_rst_export;
@@ -59,6 +63,4 @@ module lab7_soc (
 	output	[3:0]	vga_port_red;
 	output		vga_port_hs;
 	output		vga_port_vs;
-	output		start_sw_export;
-	output		reset_sw_export;
 endmodule

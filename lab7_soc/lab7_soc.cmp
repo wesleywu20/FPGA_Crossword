@@ -22,6 +22,7 @@
 			spi0_SCLK                      : out   std_logic;                                        -- SCLK
 			spi0_SS_n                      : out   std_logic;                                        -- SS_n
 			start_sw_export                : out   std_logic;                                        -- export
+			text_ctrl_keycode              : in    std_logic_vector(7 downto 0)  := (others => 'X'); -- keycode
 			usb_gpx_export                 : in    std_logic                     := 'X';             -- export
 			usb_irq_export                 : in    std_logic                     := 'X';             -- export
 			usb_rst_export                 : out   std_logic;                                        -- export
