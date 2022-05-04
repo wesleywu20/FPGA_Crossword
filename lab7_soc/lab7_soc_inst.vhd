@@ -30,7 +30,8 @@
 			vga_port_green                 : out   std_logic_vector(3 downto 0);                     -- green
 			vga_port_red                   : out   std_logic_vector(3 downto 0);                     -- red
 			vga_port_hs                    : out   std_logic;                                        -- hs
-			vga_port_vs                    : out   std_logic                                         -- vs
+			vga_port_vs                    : out   std_logic;                                        -- vs
+			move_hl_export                 : in    std_logic                     := 'X'              -- export
 		);
 	end component lab7_soc;
 
@@ -66,6 +67,7 @@
 			vga_port_green                 => CONNECTED_TO_vga_port_green,                 --                        .green
 			vga_port_red                   => CONNECTED_TO_vga_port_red,                   --                        .red
 			vga_port_hs                    => CONNECTED_TO_vga_port_hs,                    --                        .hs
-			vga_port_vs                    => CONNECTED_TO_vga_port_vs                     --                        .vs
+			vga_port_vs                    => CONNECTED_TO_vga_port_vs,                    --                        .vs
+			move_hl_export                 => CONNECTED_TO_move_hl_export                  --                 move_hl.export
 		);
 

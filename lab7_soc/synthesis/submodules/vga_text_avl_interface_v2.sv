@@ -149,7 +149,7 @@ begin
     if (blank)
     begin
         if (((drawX + 1) >= `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawX <= `CROSSWORD_RIGHT_EDGE + `LINE_WIDTH / 2) || // drawing right edge of crossword
-            ((480 - (drawY + 1)) % `HORIZONTAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2) || // drawing crossword grid horizontal lines)
+            ((drawY + 1) % `HORIZONTAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2) || // drawing crossword grid horizontal lines)
             ((drawX - 3) % `VERTICAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawY >= 80) || // drawing crossword grid vertical lines
             (drawX < 3 && drawY >= 80)
         ) 
@@ -164,8 +164,8 @@ begin
             g <= FGD_G;
             b <= FGD_B;
         end
-        else if ((drawX >= highlightX && drawX <= highlightX + 79) &&
-                (drawY >= highlightY && drawY <= highlightY + 79))
+        else if ((drawX >= highlightX && drawX <= highlightX + 76) &&
+                 (drawY >= highlightY && drawY <= highlightY + 78))
         begin
             r <= 4'b1111;
             g <= 4'b1111;

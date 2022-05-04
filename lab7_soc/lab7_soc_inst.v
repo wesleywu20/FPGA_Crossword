@@ -29,6 +29,7 @@
 		.vga_port_green                 (<connected-to-vga_port_green>),                 //                        .green
 		.vga_port_red                   (<connected-to-vga_port_red>),                   //                        .red
 		.vga_port_hs                    (<connected-to-vga_port_hs>),                    //                        .hs
-		.vga_port_vs                    (<connected-to-vga_port_vs>)                     //                        .vs
+		.vga_port_vs                    (<connected-to-vga_port_vs>),                    //                        .vs
+		.move_hl_export                 (<connected-to-move_hl_export>)                  //                 move_hl.export
 	);
 
