@@ -1,0 +1,2042 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/fpgacrossword/simulation/modelsim
+valtera_avalon_sc_fifo
+Z1 !s110 1651618789
+!i10b 1
+!s100 4mK@em][G=j]om3zJIhOc0
+IcUzGCLVD`o1Ej4^KcNgYR2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1651615390
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_sc_fifo.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_sc_fifo.v
+Z4 L0 21
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1651618789.000000
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_sc_fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_sc_fifo.v|
+!i113 1
+Z7 o-vlog01compat -work lab7_soc
+Z8 !s92 -vlog01compat -work lab7_soc +incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules
+Z9 tCvgOpt 0
+valtera_avalon_st_clock_crosser
+Z10 !s110 1651618795
+!i10b 1
+!s100 YbU`iK^TYJ_9Hz`CZekjQ3
+IzQGQHX[D^l>ic`k86mjCK0
+R2
+R0
+Z11 w1651615391
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_st_clock_crosser.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_st_clock_crosser.v
+L0 22
+R5
+r1
+!s85 0
+31
+Z12 !s108 1651618795.000000
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_st_clock_crosser.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_st_clock_crosser.v|
+!i113 1
+R7
+R8
+R9
+valtera_avalon_st_handshake_clock_crosser
+R10
+!i10b 1
+!s100 3f<J9K;e[9FU@JKn0^PK?0
+IXVimRGJeZ?QbNcA^cR^O@2
+R2
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v
+Z13 L0 24
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v|
+!i113 1
+R7
+R8
+R9
+valtera_merlin_arb_adder
+Z14 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z15 !s110 1651618796
+!i10b 1
+!s100 1Jn[a;@5nZmTN?DFKQNzj2
+Ih>?9oBY?C9K^Z`U3]blb02
+R2
+Z16 !s105 altera_merlin_arbitrator_sv_unit
+S1
+R0
+R11
+Z17 8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+Z18 FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+L0 228
+R5
+r1
+!s85 0
+31
+Z19 !s108 1651618796.000000
+Z20 !s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_arbitrator.sv|
+Z21 !s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_arbitrator.sv|
+!i113 1
+Z22 o-sv -work lab7_soc
+Z23 !s92 -sv -work lab7_soc +incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules
+R9
+valtera_merlin_arbitrator
+R14
+R15
+!i10b 1
+!s100 NQTehjm2fNQROUMUzShGa1
+IK?AaOzF4`]h^zG[<m7OeQ1
+R2
+R16
+S1
+R0
+R11
+R17
+R18
+L0 103
+R5
+r1
+!s85 0
+31
+R19
+R20
+R21
+!i113 1
+R22
+R23
+R9
+valtera_merlin_burst_adapter
+R14
+Z24 !s110 1651618798
+!i10b 1
+!s100 OCc70X^k:B?GW6i71n`L_3
+IY?Z7hz?;6<UA<TECoODKj0
+R2
+!s105 altera_merlin_burst_adapter_sv_unit
+S1
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_adapter.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_adapter.sv
+R4
+R5
+r1
+!s85 0
+31
+Z25 !s108 1651618798.000000
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_adapter.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_adapter.sv|
+!i113 1
+R22
+R23
+R9
+valtera_merlin_burst_adapter_uncompressed_only
+R14
+R24
+!i10b 1
+!s100 STH]BdUM[JDMJZNJGXCd>0
+I_P]P<HRzeiO@eeOMjlimf2
+R2
+!s105 altera_merlin_burst_adapter_uncmpr_sv_unit
+S1
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_adapter_uncmpr.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_adapter_uncmpr.sv
+L0 39
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_adapter_uncmpr.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_adapter_uncmpr.sv|
+!i113 1
+R22
+R23
+R9
+valtera_merlin_burst_uncompressor
+R14
+R15
+!i10b 1
+!s100 f1?Rb<=9U?R9LJoHl;7>T3
+I<^U?m>PAXo>W@=O2:0>Z;2
+R2
+!s105 altera_merlin_burst_uncompressor_sv_unit
+S1
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+L0 40
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_uncompressor.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_burst_uncompressor.sv|
+!i113 1
+R22
+R23
+R9
+valtera_merlin_master_agent
+R14
+Z26 !s110 1651618800
+!i10b 1
+!s100 _CJm:YX=>U2LQKH;8=@cb0
+IOIN_]He?5?>0N6IHJGHoz1
+R2
+!s105 altera_merlin_master_agent_sv_unit
+S1
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_master_agent.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_master_agent.sv
+L0 28
+R5
+r1
+!s85 0
+31
+Z27 !s108 1651618800.000000
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_master_agent.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_master_agent.sv|
+!i113 1
+R22
+R23
+R9
+valtera_merlin_master_translator
+R14
+R26
+!i10b 1
+!s100 NdRk@]3fC2C@V7Rm;dQM31
+I9Pa117o>YoE4Djc34=0FK3
+R2
+!s105 altera_merlin_master_translator_sv_unit
+S1
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_master_translator.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_master_translator.sv
+Z28 L0 32
+R5
+r1
+!s85 0
+31
+R27
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_master_translator.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_master_translator.sv|
+!i113 1
+R22
+R23
+R9
+valtera_merlin_slave_agent
+R14
+Z29 !s110 1651618799
+!i10b 1
+!s100 ePZN1d?B062J`OBb?blff3
+Ii<FlO;]K9XF2mWiG_LR6Y0
+R2
+!s105 altera_merlin_slave_agent_sv_unit
+S1
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_slave_agent.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_slave_agent.sv
+Z30 L0 34
+R5
+r1
+!s85 0
+31
+Z31 !s108 1651618799.000000
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_slave_agent.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_slave_agent.sv|
+!i113 1
+R22
+R23
+R9
+valtera_merlin_slave_translator
+R14
+R26
+!i10b 1
+!s100 k`9[YAn_dLTkg;GE`mOb61
+I]?a5o`MhR<2K?ad07J0U>1
+R2
+!s105 altera_merlin_slave_translator_sv_unit
+S1
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_slave_translator.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_slave_translator.sv
+L0 35
+R5
+r1
+!s85 0
+31
+R27
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_slave_translator.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_slave_translator.sv|
+!i113 1
+R22
+R23
+R9
+valtera_merlin_width_adapter
+R14
+R15
+!i10b 1
+!s100 QzdA5DP6CReOTH<9QzODa3
+IR=Gc<i5VR_@=5DzB70h>N1
+R2
+!s105 altera_merlin_width_adapter_sv_unit
+S1
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_width_adapter.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_width_adapter.sv
+L0 25
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_width_adapter.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_merlin_width_adapter.sv|
+!i113 1
+R22
+R23
+R9
+valtera_reset_controller
+Z32 !s110 1651618788
+!i10b 1
+!s100 z[H_hRO9gO=:^2E3_jWH03
+IABLZ;iae2o7:CzijOYLEe3
+R2
+R0
+Z33 w1651615383
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_reset_controller.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_reset_controller.v
+L0 42
+R5
+r1
+!s85 0
+31
+Z34 !s108 1651618788.000000
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_reset_controller.v|
+!i113 1
+R7
+R8
+R9
+valtera_reset_synchronizer
+R32
+!i10b 1
+!s100 oWLYmSO[EOX[G0PgQhZ2=0
+I;o@V6S^LnYo4_KB5niE;Q0
+R2
+R0
+R33
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_reset_synchronizer.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_reset_synchronizer.v
+R13
+R5
+r1
+!s85 0
+31
+R34
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_reset_synchronizer.v|
+!i113 1
+R7
+R8
+R9
+valtera_std_synchronizer_nocut
+R15
+!i10b 1
+!s100 b8zV2<79GgkNg0GC<P[GJ2
+IGPD>@UQ`zm9WEHMRDlok=3
+R2
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_std_synchronizer_nocut.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/altera_std_synchronizer_nocut.v
+L0 44
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_std_synchronizer_nocut.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/altera_std_synchronizer_nocut.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc
+R32
+!i10b 1
+!s100 UVM`3`6a[h4WB44<_fL3k1
+I]?ib`A1OjI8RHT<jzUST^3
+R2
+R0
+Z35 w1651615327
+8C:/fpgacrossword/lab7_soc/synthesis/lab7_soc.v
+FC:/fpgacrossword/lab7_soc/synthesis/lab7_soc.v
+L0 6
+R5
+r1
+!s85 0
+31
+R34
+!s107 C:/fpgacrossword/lab7_soc/synthesis/lab7_soc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis|C:/fpgacrossword/lab7_soc/synthesis/lab7_soc.v|
+!i113 1
+R7
+!s92 -vlog01compat -work lab7_soc +incdir+C:/fpgacrossword/lab7_soc/synthesis
+R9
+vlab7_soc_irq_mapper
+R14
+R10
+!i10b 1
+!s100 OOk6aO@Q?0JhJGzDc218D1
+I`k[_0N0SgVn7kM_bV58e50
+R2
+!s105 lab7_soc_irq_mapper_sv_unit
+S1
+R0
+Z36 w1651615382
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_irq_mapper.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_irq_mapper.sv
+L0 31
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_irq_mapper.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_irq_mapper.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_jtag_uart_0
+Z37 !s110 1651618793
+!i10b 1
+!s100 ?I:_Xh2mnoXZmH>jk88;O0
+I>bGLo5E;Ze@nQ2T76D5fo1
+R2
+R0
+Z38 w1651615330
+Z39 8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_jtag_uart_0.v
+Z40 FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_jtag_uart_0.v
+L0 331
+R5
+r1
+!s85 0
+31
+Z41 !s108 1651618793.000000
+Z42 !s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_jtag_uart_0.v|
+Z43 !s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_jtag_uart_0.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_jtag_uart_0_scfifo_r
+R37
+!i10b 1
+!s100 ZcDJV=Y6jMB>k6bSzfN`O3
+I7eg0`GmCUDme>ZX0ZM7iN0
+R2
+R0
+R38
+R39
+R40
+L0 243
+R5
+r1
+!s85 0
+31
+R41
+R42
+R43
+!i113 1
+R7
+R8
+R9
+vlab7_soc_jtag_uart_0_scfifo_w
+R37
+!i10b 1
+!s100 kA0JQBaM;KbbOW_1``0<=1
+I^mO2e1[`PgXYfaMcP^B`33
+R2
+R0
+R38
+R39
+R40
+L0 78
+R5
+r1
+!s85 0
+31
+R41
+R42
+R43
+!i113 1
+R7
+R8
+R9
+vlab7_soc_jtag_uart_0_sim_scfifo_r
+R37
+!i10b 1
+!s100 6kh:=nonflh2dhKfIgFoh3
+I@elczA3?BnSJ]imk:@V8Z0
+R2
+R0
+R38
+R39
+R40
+L0 164
+R5
+r1
+!s85 0
+31
+R41
+R42
+R43
+!i113 1
+R7
+R8
+R9
+vlab7_soc_jtag_uart_0_sim_scfifo_w
+R37
+!i10b 1
+!s100 G5Z7m@Bdia:7fUGaPb7B61
+I<=ImW?@]M1=P]iUW`V<LS2
+R2
+R0
+R38
+R39
+R40
+R4
+R5
+r1
+!s85 0
+31
+R41
+R42
+R43
+!i113 1
+R7
+R8
+R9
+vlab7_soc_key
+R37
+!i10b 1
+!s100 Qcdlkfk]ZP8j;YMK67_zh3
+I19aTSPBPPe>b3j9PmS_UC0
+R2
+R0
+Z44 w1651615331
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_key.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_key.v
+R4
+R5
+r1
+!s85 0
+31
+R41
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_key.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_key.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_keycode
+R37
+!i10b 1
+!s100 BSNQ0X;F4=9aT4808lz@I0
+I[75W@AZgmHDXoF=U<[56L1
+R2
+R0
+R44
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_keycode.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_keycode.v
+R4
+R5
+r1
+!s85 0
+31
+R41
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_keycode.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_keycode.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_leds_pio
+R37
+!i10b 1
+!s100 0Mjli0=]oZdQcJo4RnZE]0
+I>QLHizFIR[`61SbacI_E03
+R2
+R0
+w1651615332
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_leds_pio.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_leds_pio.v
+R4
+R5
+r1
+!s85 0
+31
+R41
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_leds_pio.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_leds_pio.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_mm_interconnect_0
+R1
+!i10b 1
+!s100 JgD[Q05WX>8CAiTc:MMLZ2
+Ig_7l2Qzn58?<4lnH`c5Bg3
+R2
+R0
+R36
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0.v
+L0 9
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_mm_interconnect_0_avalon_st_adapter
+R1
+!i10b 1
+!s100 8zBozcDFYN;EiZ0ooSZ?B0
+I@FQQPaF>UbnPb>hfNLT6B0
+R2
+R0
+w1651615392
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter.v
+L0 9
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_mm_interconnect_0_avalon_st_adapter_007
+R1
+!i10b 1
+!s100 ;<HD;`B<K=H38d0zUm?gI3
+ImIU9hjGbQ5=O9QK5_V=cb0
+R2
+R0
+Z45 w1651615393
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_007.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_007.v
+L0 9
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_007.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_007.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_mm_interconnect_0_avalon_st_adapter_007_error_adapter_0
+R14
+R10
+!i10b 1
+!s100 geYP>mz051[1M0LzPnP]S2
+IZWz:LUhAD4BlHeIA5:COL2
+R2
+!s105 lab7_soc_mm_interconnect_0_avalon_st_adapter_007_error_adapter_0_sv_unit
+S1
+R0
+R45
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_007_error_adapter_0.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_007_error_adapter_0.sv
+Z46 L0 66
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_007_error_adapter_0.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_007_error_adapter_0.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+R14
+R10
+!i10b 1
+!s100 `ifJe[GCPgZhSQIz6_Leg3
+I::[[]@Y?2[P2kfchTcfZ43
+R2
+!s105 lab7_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0_sv_unit
+S1
+R0
+R45
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+R46
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_cmd_demux
+R14
+R24
+!i10b 1
+!s100 oa>VShM8JSM4HTKNo7id?3
+Ik:9iTO70CLo;B3?fYQSfR0
+R2
+!s105 lab7_soc_mm_interconnect_0_cmd_demux_sv_unit
+S1
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_demux.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_demux.sv
+Z47 L0 43
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_demux.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_demux.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_cmd_demux_001
+R14
+R24
+!i10b 1
+!s100 <KNz0WakY[j@:IR5BIKH>2
+I3KZHlzU`R63M5[GZ@aTO23
+R2
+!s105 lab7_soc_mm_interconnect_0_cmd_demux_001_sv_unit
+S1
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_demux_001.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_demux_001.sv
+R47
+R5
+r1
+!s85 0
+31
+R25
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_demux_001.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_demux_001.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_cmd_mux
+R14
+Z48 !s110 1651618797
+!i10b 1
+!s100 X?6gHGRTkSnk00ZI<I[Tn3
+Il8jk@zF::S;[RhcBG^LNl2
+R2
+!s105 lab7_soc_mm_interconnect_0_cmd_mux_sv_unit
+S1
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_mux.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_mux.sv
+Z49 L0 51
+R5
+r1
+!s85 0
+31
+Z50 !s108 1651618797.000000
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_mux.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_mux.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_cmd_mux_001
+R14
+R48
+!i10b 1
+!s100 fWGVAzYjc`5e4Z<dhziTj0
+I8:1:MNIZJC72kz=`PFkLd3
+R2
+!s105 lab7_soc_mm_interconnect_0_cmd_mux_001_sv_unit
+S1
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_mux_001.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_mux_001.sv
+R49
+R5
+r1
+!s85 0
+31
+R50
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_mux_001.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_cmd_mux_001.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_router
+R14
+R29
+!i10b 1
+!s100 >i_^STZ70JBngL:N;7WeD2
+IWfGg8^eL:85bX]c:?@9m:2
+R2
+Z51 !s105 lab7_soc_mm_interconnect_0_router_sv_unit
+S1
+R0
+R3
+Z52 8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router.sv
+Z53 FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router.sv
+Z54 L0 84
+R5
+r1
+!s85 0
+31
+R31
+Z55 !s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router.sv|
+Z56 !s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_router_001
+R14
+R29
+!i10b 1
+!s100 =FGFNU@P^JiH6;7F7oDA73
+IIQ<[OJbCoBm5Q`[=Z2SaA0
+R2
+Z57 !s105 lab7_soc_mm_interconnect_0_router_001_sv_unit
+S1
+R0
+R3
+Z58 8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_001.sv
+Z59 FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_001.sv
+R54
+R5
+r1
+!s85 0
+31
+R31
+Z60 !s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_001.sv|
+Z61 !s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_001.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_router_001_default_decode
+R14
+R29
+!i10b 1
+!s100 PIOOOaN2i0iH_]<QlY`Ub3
+IO65g:<YAlCg8D_b407DZW2
+R2
+R57
+S1
+R0
+R3
+R58
+R59
+Z62 L0 45
+R5
+r1
+!s85 0
+31
+R31
+R60
+R61
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_router_002
+R14
+R29
+!i10b 1
+!s100 Tinhf;M2B^:0^`L;UzI[g0
+Id8WnX8l`ziKGPIdSc<b1^0
+R2
+Z63 !s105 lab7_soc_mm_interconnect_0_router_002_sv_unit
+S1
+R0
+R3
+Z64 8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_002.sv
+Z65 FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_002.sv
+R54
+R5
+r1
+!s85 0
+31
+R31
+Z66 !s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_002.sv|
+Z67 !s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_002.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_router_002_default_decode
+R14
+R29
+!i10b 1
+!s100 RQiC6EVT[cAm[gzmda`oE3
+IL@Rh`RO3MMf1o;PzPkj`O3
+R2
+R63
+S1
+R0
+R3
+R64
+R65
+R62
+R5
+r1
+!s85 0
+31
+R31
+R66
+R67
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_router_003
+R14
+R29
+!i10b 1
+!s100 9X5>:AKi;QGSQkNhSm@>10
+I8fXGZg:VV:YoMFO7TI[aM0
+R2
+Z68 !s105 lab7_soc_mm_interconnect_0_router_003_sv_unit
+S1
+R0
+R3
+Z69 8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_003.sv
+Z70 FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_003.sv
+R54
+R5
+r1
+!s85 0
+31
+R25
+Z71 !s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_003.sv|
+Z72 !s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_003.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_router_003_default_decode
+R14
+R29
+!i10b 1
+!s100 HWkk=VUifdJ`[^Xk;`mF31
+Ig<WM[]b]El_N8^DVc1^K51
+R2
+R68
+S1
+R0
+R3
+R69
+R70
+R62
+R5
+r1
+!s85 0
+31
+R25
+R71
+R72
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_router_009
+R14
+R24
+!i10b 1
+!s100 Z=GS^6BFTUFP?8F9D]gDk1
+Ic6B[BGT@4:7X>ifDK2Sg30
+R2
+Z73 !s105 lab7_soc_mm_interconnect_0_router_009_sv_unit
+S1
+R0
+R3
+Z74 8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_009.sv
+Z75 FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_009.sv
+R54
+R5
+r1
+!s85 0
+31
+R25
+Z76 !s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_009.sv|
+Z77 !s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_router_009.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_router_009_default_decode
+R14
+R24
+!i10b 1
+!s100 5YbEX=2aE]lNFEhj;W09b2
+IJnURLFG_?fdlKT5R^YhmS2
+R2
+R73
+S1
+R0
+R3
+R74
+R75
+R62
+R5
+r1
+!s85 0
+31
+R25
+R76
+R77
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_router_default_decode
+R14
+R29
+!i10b 1
+!s100 VEkVOYZYB>=lFj2`fzGIP2
+ITM?bb`6B_TEg3;b[C44lc1
+R2
+R51
+S1
+R0
+R3
+R52
+R53
+R62
+R5
+r1
+!s85 0
+31
+R31
+R55
+R56
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_rsp_demux
+R14
+R48
+!i10b 1
+!s100 z:gL6df=PI53]8l=IJS9b0
+ISf6joRV[>B=cT2XPPf]3:2
+R2
+!s105 lab7_soc_mm_interconnect_0_rsp_demux_sv_unit
+S1
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_demux.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_demux.sv
+R47
+R5
+r1
+!s85 0
+31
+R50
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_demux.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_demux.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_rsp_demux_001
+R14
+R48
+!i10b 1
+!s100 `AH=I5ZZUmo_JBbEj^R[S2
+IL?87oOQoLeQ?JfJcJ`AZK2
+R2
+!s105 lab7_soc_mm_interconnect_0_rsp_demux_001_sv_unit
+S1
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_demux_001.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_demux_001.sv
+R47
+R5
+r1
+!s85 0
+31
+R50
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_demux_001.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_demux_001.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_rsp_mux
+R14
+R48
+!i10b 1
+!s100 C7BP<;obJfBEan4oBHIGT2
+IA:E5ADhS7`MbFA>cMDm8^3
+R2
+!s105 lab7_soc_mm_interconnect_0_rsp_mux_sv_unit
+S1
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_mux.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_mux.sv
+R49
+R5
+r1
+!s85 0
+31
+R50
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_mux.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_mux.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_mm_interconnect_0_rsp_mux_001
+R14
+R15
+!i10b 1
+!s100 lEWRXB:`;LhP;TN1;<2nU0
+IXCH<c[^aP]89e9U2:zzb<0
+R2
+!s105 lab7_soc_mm_interconnect_0_rsp_mux_001_sv_unit
+S1
+R0
+R11
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_mux_001.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_mux_001.sv
+R49
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_mux_001.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_mm_interconnect_0_rsp_mux_001.sv|
+!i113 1
+R22
+R23
+R9
+vlab7_soc_nios2_gen2_0
+Z78 !s110 1651618791
+!i10b 1
+!s100 mf6l21<=cVA?<l^`2T6X91
+I^z?GC_];^NZ?0;:lA;B6X2
+R2
+R0
+Z79 w1651615334
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0.v
+L0 9
+R5
+r1
+!s85 0
+31
+Z80 !s108 1651618791.000000
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu
+R78
+!i10b 1
+!s100 ibG]m4a3^RTNL?8bASVK;3
+IP=X0alJfIJ_i7W2PH9gAK1
+R2
+R0
+R3
+Z81 8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu.v
+Z82 FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu.v
+L0 2834
+R5
+r1
+!s85 0
+31
+R80
+Z83 !s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu.v|
+Z84 !s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_debug_slave_sysclk
+Z85 !s110 1651618792
+!i10b 1
+!s100 gLM[8eh7lC2OP4bhUMJ7?1
+Ii6^E]ASAEM2cO;[9j>2<i0
+R2
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_sysclk.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_sysclk.v
+R4
+R5
+r1
+!s85 0
+31
+Z86 !s108 1651618792.000000
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_sysclk.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_sysclk.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_debug_slave_tck
+R85
+!i10b 1
+!s100 iBomD1hBFLAaVgFnR7X=30
+II]`kfneG1O31LYzed2Pcb1
+R2
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_tck.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_tck.v
+R4
+R5
+r1
+!s85 0
+31
+R86
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_tck.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_tck.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_debug_slave_wrapper
+R85
+!i10b 1
+!s100 b:1[N3cMa0<XnFL]HP=QA0
+IOnjU[eIk`Dl3UOnO49_=I0
+R2
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_wrapper.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_wrapper.v
+R4
+R5
+r1
+!s85 0
+31
+R86
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_wrapper.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_debug_slave_wrapper.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_avalon_reg
+R78
+!i10b 1
+!s100 j=MLP9LHM_ZZ^i8dLGXgO3
+I5U_lKNE`DXPA6gmed5;L51
+R2
+R0
+R3
+R81
+R82
+L0 2023
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci
+R78
+!i10b 1
+!s100 EWG`]=:^Sfz`aigmIR>Z33
+I6iA3[FebZ3JzN<CNDjKGA3
+R2
+R0
+R3
+R81
+R82
+L0 2362
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_break
+R78
+!i10b 1
+!s100 KAdRBli83G83@I_2z:e;61
+I;2A0CHL_RPif548zb]zT@1
+R2
+R0
+R3
+R81
+R82
+L0 295
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_compute_input_tm_cnt
+R78
+!i10b 1
+!s100 Qa:]BC_GKN3TcOK76TG=S0
+I]@b@kMKeE4DNY_`e>U4ge1
+R2
+R0
+R3
+R81
+R82
+L0 1265
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_dbrk
+R78
+!i10b 1
+!s100 VR]cTNo:zWhIR`h:[FL9b0
+I6zFYY`A1:KaVFM0XL>Hc02
+R2
+R0
+R3
+R81
+R82
+L0 795
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_debug
+R78
+!i10b 1
+!s100 9Y4OJQ7OO[0@N6>S0FUao1
+I3=onWLAcVT4=UoXeBL[Wl2
+R2
+R0
+R3
+R81
+R82
+L0 153
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_dtrace
+R78
+!i10b 1
+!s100 S5=a]V?dcT9H;E16];N6E0
+I_6TVE5NL`7dAeXLkC74P;3
+R2
+R0
+R3
+R81
+R82
+L0 1183
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_fifo
+R78
+!i10b 1
+!s100 0IJc:f8CMmEC3z?k]bR>n3
+IF8[nF5Da3n:LgdjoF0EIZ2
+R2
+R0
+R3
+R81
+R82
+L0 1427
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_fifo_cnt_inc
+R78
+!i10b 1
+!s100 i=LdeS^mfK>c1R`CMg2?L0
+IKLl9=SPFEKV[3[1n77eg90
+R2
+R0
+R3
+R81
+R82
+L0 1380
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_fifo_wrptr_inc
+R78
+!i10b 1
+!s100 9;6jjoHW_NzG@2H_Doc]N2
+IPXQ>[9368z<KP0PChhEi<0
+R2
+R0
+R3
+R81
+R82
+L0 1337
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_im
+R78
+!i10b 1
+!s100 Yl6RNB<4gnU?V?CRZeHCD3
+I70aQddP7INGdi7f?KL2]W3
+R2
+R0
+R3
+R81
+R82
+L0 1936
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_itrace
+R78
+!i10b 1
+!s100 ?AFTa4OM9^ASdzXc<@TeN2
+I0V9CAhQC4m9kYLTAC^7Kg0
+R2
+R0
+R3
+R81
+R82
+L0 982
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_pib
+R78
+!i10b 1
+!s100 =icdY70h2m>?6ZAkL5iVB1
+IjOF[==bfU@1Q:=C<[>6M;1
+R2
+R0
+R3
+R81
+R82
+L0 1913
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_td_mode
+R78
+!i10b 1
+!s100 :dzinn^DD1jFfV[TgzY`b0
+ID:cY>V>bc7oPm2jigCnnU2
+R2
+R0
+R3
+R81
+R82
+L0 1115
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_oci_xbrk
+R78
+!i10b 1
+!s100 gzi2lCo?J6SbW<g]N[d322
+I_i5d9`kLn=obCn2jJMSnM2
+R2
+R0
+R3
+R81
+R82
+L0 588
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_ocimem
+R78
+!i10b 1
+!s100 320k4YakgNH75dJ04E`@e0
+I4d6FEJeS@Tc^FQ5fDYOnY0
+R2
+R0
+R3
+R81
+R82
+L0 2181
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_nios2_performance_monitors
+R78
+!i10b 1
+!s100 86V5K:VC<aE@klYcfLYC31
+IY<Ic@PLa`:l16?[lJb8VF1
+R2
+R0
+R3
+R81
+R82
+L0 2006
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_ociram_sp_ram_module
+R78
+!i10b 1
+!s100 :Ma7mJ_EMlDX1WT7>3a:I1
+IQjBVPRDH3fAWbO4;FVRm61
+R2
+R0
+R3
+R81
+R82
+L0 2116
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_register_bank_a_module
+R78
+!i10b 1
+!s100 zdY=6DB`;ecPTLETz45Ca2
+Io8[AQ<8JzRfLWJgc1D6B;0
+R2
+R0
+R3
+R81
+R82
+R4
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_register_bank_b_module
+R78
+!i10b 1
+!s100 >=DSGH8eMSgT8CckGW5O20
+IF3LJj?BU[DzN6B;IMIE]h2
+R2
+R0
+R3
+R81
+R82
+L0 87
+R5
+r1
+!s85 0
+31
+R80
+R83
+R84
+!i113 1
+R7
+R8
+R9
+vlab7_soc_nios2_gen2_0_cpu_test_bench
+R85
+!i10b 1
+!s100 Se5H^^M80^U^TbjWKRM151
+ITjRS1zJ4IIJE;K7NoOD[C1
+R2
+R0
+R3
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_test_bench.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_test_bench.v
+R4
+R5
+r1
+!s85 0
+31
+R86
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_test_bench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_nios2_gen2_0_cpu_test_bench.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_onchip_memory2_0
+R78
+!i10b 1
+!s100 BBCU6oN5ocePVm5eSmQc@2
+IIdhl_0KW^D5IF2^SS_LGj3
+R2
+R0
+R79
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_onchip_memory2_0.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_onchip_memory2_0.v
+R4
+R5
+r1
+!s85 0
+31
+R80
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_onchip_memory2_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_onchip_memory2_0.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_sdram
+R78
+!i10b 1
+!s100 DlVgT0i[P[g>RmGm0BE:13
+IS?F2ZL7SgL^G@QVSz[I>_3
+R2
+R0
+Z87 w1651615336
+Z88 8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sdram.v
+Z89 FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sdram.v
+L0 159
+R5
+r1
+!s85 0
+31
+R80
+Z90 !s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sdram.v|
+Z91 !s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sdram.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_sdram_input_efifo_module
+R78
+!i10b 1
+!s100 `CS5DLVBB]J]MhbZ=[=0W1
+Ii<=8V^Q5mKCa4af:CVTRO1
+R2
+R0
+R87
+R88
+R89
+R4
+R5
+r1
+!s85 0
+31
+R80
+R90
+R91
+!i113 1
+R7
+R8
+R9
+vlab7_soc_sdram_pll
+Z92 !s110 1651618790
+!i10b 1
+!s100 PL318bn6X^?nhOmn<7ZYU1
+I0QccBeb_@A0djQzEfORbc3
+R2
+R0
+Z93 w1651615339
+Z94 8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sdram_pll.v
+Z95 FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sdram_pll.v
+L0 217
+R5
+r1
+!s85 0
+31
+Z96 !s108 1651618790.000000
+Z97 !s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sdram_pll.v|
+Z98 !s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sdram_pll.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_sdram_pll_altpll_vg92
+R92
+!i10b 1
+!s100 TM8GGzaziO@4Y[DQ`18O^3
+IKLDWolaK9JXbKX6@0@S7B2
+R2
+R0
+R93
+R94
+R95
+L0 130
+R5
+r1
+!s85 0
+31
+R96
+R97
+R98
+!i113 1
+R7
+R8
+R9
+vlab7_soc_sdram_pll_dffpipe_l2c
+R92
+!i10b 1
+!s100 6BWihgjUk;B9]>iIY?:dm3
+IhA?OU`=@GhATjCg@M0:hD2
+R2
+R0
+R93
+R94
+R95
+L0 37
+R5
+r1
+!s85 0
+31
+R96
+R97
+R98
+!i113 1
+R7
+R8
+R9
+vlab7_soc_sdram_pll_stdsync_sv6
+R92
+!i10b 1
+!s100 6bP9LYg1SPSIl>9o7eiV13
+I]`ab3mZ8<_AOI?7S;V<aT3
+R2
+R0
+R93
+R94
+R95
+L0 98
+R5
+r1
+!s85 0
+31
+R96
+R97
+R98
+!i113 1
+R7
+R8
+R9
+vlab7_soc_spi0
+R92
+!i10b 1
+!s100 SPX=P<3Y^koGlHjG>b1zl0
+IKDMzHZfWjYFlCmDP@EHM71
+R2
+R0
+w1651615340
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_spi0.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_spi0.v
+L0 41
+R5
+r1
+!s85 0
+31
+R96
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_spi0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_spi0.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_stopwatch
+R92
+!i10b 1
+!s100 MeMX[Xef=YDFCz0z8X6MZ0
+IfS9Q0ji`?8CaaNR1nTg4a1
+R2
+R0
+Z99 w1651615341
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_stopwatch.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_stopwatch.v
+R4
+R5
+r1
+!s85 0
+31
+R96
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_stopwatch.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_stopwatch.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_sysid_qsys_0
+R92
+!i10b 1
+!s100 oBR]2V8L;gOk3H8<66aC:1
+IdLoVdEO3Nz_zWD8LO_T4A2
+R2
+R0
+R99
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sysid_qsys_0.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sysid_qsys_0.v
+R30
+R5
+r1
+!s85 0
+31
+R96
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sysid_qsys_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_sysid_qsys_0.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_timer_0
+R92
+!i10b 1
+!s100 n3[U5d:_z`]>PC[n`[@B?2
+I@84F@4?61@Y5U702T^O`@2
+R2
+R0
+R99
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_timer_0.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_timer_0.v
+R4
+R5
+r1
+!s85 0
+31
+R96
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_timer_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_timer_0.v|
+!i113 1
+R7
+R8
+R9
+vlab7_soc_usb_gpx
+R92
+!i10b 1
+!s100 nVIBU4c?gBeXeC;4@Dhjl1
+IGSN7<2E>?8XWSl7;Pb2Qm3
+R2
+R0
+w1651615342
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_usb_gpx.v
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_usb_gpx.v
+R4
+R5
+r1
+!s85 0
+31
+R96
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_usb_gpx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/lab7_soc_usb_gpx.v|
+!i113 1
+R7
+R8
+R9
+vvga_text_avl_interface
+R14
+R26
+!i10b 1
+!s100 JG9lEQzWVzY?iS;0OJEi:2
+I9g[fdekSV5b=6l9`FF?:_1
+R2
+!s105 vga_text_avl_interface_v2_sv_unit
+S1
+R0
+R35
+8C:/fpgacrossword/lab7_soc/synthesis/submodules/vga_text_avl_interface_v2.sv
+FC:/fpgacrossword/lab7_soc/synthesis/submodules/vga_text_avl_interface_v2.sv
+R28
+R5
+r1
+!s85 0
+31
+R27
+!s107 C:/fpgacrossword/lab7_soc/synthesis/submodules/vga_text_avl_interface_v2.sv|
+!s90 -reportprogress|300|-sv|-work|lab7_soc|+incdir+C:/fpgacrossword/lab7_soc/synthesis/submodules|C:/fpgacrossword/lab7_soc/synthesis/submodules/vga_text_avl_interface_v2.sv|
+!i113 1
+R22
+R23
+R9

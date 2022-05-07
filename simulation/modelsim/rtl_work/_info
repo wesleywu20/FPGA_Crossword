@@ -1,0 +1,233 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/fpgacrossword/simulation/modelsim
+vfont_rom
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1651618795
+!i10b 1
+!s100 nXf36Hef`mS:7efZS5`4A3
+I5@X=Mf=_N=PlSZGG8KmVS0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 font_rom_sv_unit
+S1
+R0
+w1626305423
+8C:/fpgacrossword/font_rom.sv
+FC:/fpgacrossword/font_rom.sv
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1651618794.000000
+!s107 C:/fpgacrossword/font_rom.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/fpgacrossword|C:/fpgacrossword/font_rom.sv|
+!i113 1
+Z5 o-sv -work work
+Z6 !s92 -sv -work work +incdir+C:/fpgacrossword
+Z7 tCvgOpt 0
+vHexDriver
+R1
+Z8 !s110 1651618794
+!i10b 1
+!s100 hKBo4zbCRmY3[Ac9JZP;<0
+I^YlEHMLCKNz`fhLH]lNJA2
+R2
+!s105 HexDriver_sv_unit
+S1
+R0
+w1443474828
+8C:/fpgacrossword/HexDriver.sv
+FC:/fpgacrossword/HexDriver.sv
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/fpgacrossword/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/fpgacrossword|C:/fpgacrossword/HexDriver.sv|
+!i113 1
+R5
+R6
+R7
+n@hex@driver
+vhighlight
+R1
+!s110 1651618793
+!i10b 1
+!s100 k57NL?]gm7LVgK0E^7;?M3
+I]FQ<zmmS814R90TNWZjR?0
+R2
+!s105 highlight_sv_unit
+S1
+R0
+w1651618531
+8C:/fpgacrossword/highlight.sv
+FC:/fpgacrossword/highlight.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1651618793.000000
+!s107 C:/fpgacrossword/highlight.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/fpgacrossword|C:/fpgacrossword/highlight.sv|
+!i113 1
+R5
+R6
+R7
+vjohncena
+!s110 1651618788
+!i10b 1
+!s100 Y2F>dJk;k:1SAEE]?U2PY2
+I:5X;?4_<l[lP8OihKd8NV3
+R2
+R0
+w1649283047
+8C:/fpgacrossword/johncena.v
+FC:/fpgacrossword/johncena.v
+L0 39
+R3
+r1
+!s85 0
+31
+!s108 1651618787.000000
+!s107 C:/fpgacrossword/johncena.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/fpgacrossword|C:/fpgacrossword/johncena.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/fpgacrossword
+R7
+vlab7
+R1
+R8
+!i10b 1
+!s100 _2UUJbgBOS7:6Ql:hH:H^1
+IP6miz`5CId4`3S@FMY^Y^2
+R2
+!s105 lab7_sv_unit
+S1
+R0
+w1651460406
+8C:/fpgacrossword/lab7.sv
+FC:/fpgacrossword/lab7.sv
+L0 10
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/fpgacrossword/lab7.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/fpgacrossword|C:/fpgacrossword/lab7.sv|
+!i113 1
+R5
+R6
+R7
+vstopwatch
+R1
+R8
+!i10b 1
+!s100 2]Li9PmZGiAjFkhT_R[kd1
+Ig67hzbIeVQ>aQ08kR59<M2
+R2
+!s105 stopwatch_sv_unit
+S1
+R0
+w1651169485
+8C:/fpgacrossword/stopwatch.sv
+FC:/fpgacrossword/stopwatch.sv
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/fpgacrossword/stopwatch.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/fpgacrossword|C:/fpgacrossword/stopwatch.sv|
+!i113 1
+R5
+R6
+R7
+vtestbench
+R1
+!s110 1651618801
+!i10b 1
+!s100 nLNSfnQTCC;ik6eknJ^@W0
+I@cn0CDDLReAORBg9kX=L;2
+R2
+!s105 testbench_sv_unit
+S1
+R0
+w1651618196
+8C:/fpgacrossword/testbench.sv
+FC:/fpgacrossword/testbench.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1651618800.000000
+!s107 C:/fpgacrossword/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/fpgacrossword|C:/fpgacrossword/testbench.sv|
+!i113 1
+R5
+R6
+R7
+vvga_controller
+R1
+R8
+!i10b 1
+!s100 PJJOcFccdZOKRcczIX[X?3
+I`^CS^8=6<hjb`<i;@>Qjh0
+R2
+!s105 VGA_controller_sv_unit
+S1
+R0
+w1413407624
+8C:/fpgacrossword/VGA_controller.sv
+FC:/fpgacrossword/VGA_controller.sv
+L0 25
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/fpgacrossword/VGA_controller.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/fpgacrossword|C:/fpgacrossword/VGA_controller.sv|
+!i113 1
+R5
+R6
+R7
+vvga_text_avl_interface
+R1
+R8
+!i10b 1
+!s100 JG9lEQzWVzY?iS;0OJEi:2
+IajoG;d9E]RfRe4Zl4PabM2
+R2
+!s105 vga_text_avl_interface_v2_sv_unit
+S1
+R0
+w1651615292
+8C:/fpgacrossword/vga_text_avl_interface_v2.sv
+FC:/fpgacrossword/vga_text_avl_interface_v2.sv
+L0 32
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/fpgacrossword/vga_text_avl_interface_v2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/fpgacrossword|C:/fpgacrossword/vga_text_avl_interface_v2.sv|
+!i113 1
+R5
+R6
+R7

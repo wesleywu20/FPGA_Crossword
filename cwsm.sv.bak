@@ -1,0 +1,45 @@
+module cwsm(input clk, reset, run, win,
+            input [7:0] keycode,
+            output [1:0] display)
+
+    enum logic [1:0] {Menu, Level, Win} State, Next_state; 
+
+    always_ff @ (posedge Clk)
+	begin
+		if (Reset) 
+			State <= Menu;
+		else 
+			State <= Next_state;
+	end
+    always_comb
+    begin
+        unique case (State)
+            Menu:
+                if (run)
+                    Next_state = Level;
+            Level:
+                if (win)
+                    Next_state = Win;
+                else   
+                    Next_state = Level;
+            Win: 
+                if (reset)
+                    Next_state = Menu;
+            // CloseToWin:
+            //     if (run)
+            //         Next_state = Level;
+            default: Next_state = Level;
+
+        Next_state = State;
+        case (State) 
+            Menu: 
+                display = 2'b00;
+            Level:
+                display = 2'b01;
+            // CloseToWin:
+            //     display = 2'b10;
+            Win:
+                display = 2'b11;
+            
+    end
+endmodule
