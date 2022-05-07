@@ -62,8 +62,10 @@ module lab7 (
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-	logic SPI0_CS_N, SPI0_SCLK, SPI0_MISO, SPI0_MOSI, USB_GPX, USB_IRQ, USB_RST, Start_SW, Reset_SW;
-	logic [3:0] hex_num_4, hex_num_3, hex_num_1, hex_num_0; //4 bit input hex digits
+	logic SPI0_CS_N, SPI0_SCLK, SPI0_MISO, SPI0_MOSI, USB_GPX, USB_IRQ, USB_RST, Start_SW, Reset_SW, Move_HL, win, Reset_h, game_reset;
+	logic [15:0] sw_digits;
+	logic [3:0] hex_num_5, hex_num_4, hex_num_3, hex_num_1, hex_num_0; //4 bit input hex digits
+	logic [3:0] hex4, hex3, hex1, hex0;
 	logic [1:0] signs;
 	logic [1:0] hundreds;
 	logic [7:0] keycode;
@@ -105,7 +107,10 @@ module lab7 (
 	assign HEX0[7] = 1'b1;
 	
 	//fill in the hundreds digit as well as the negative sign
-	assign HEX5 = {1'b1, ~signs[1], 3'b111, ~hundreds[1], ~hundreds[1], 1'b1};
+	// assign HEX5 = {1'b1, ~signs[1], 3'b111, ~hundreds[1], ~hundreds[1], 1'b1};
+	HexDriver hex_driver5 (hex_num_5, HEX5[6:0]);
+	assign HEX5[7] = 1'b1;
+
 	assign HEX4 = {1'b1, ~signs[0], 3'b111, ~hundreds[0], ~hundreds[0], 1'b1};
 	
 	
@@ -114,9 +119,9 @@ module lab7 (
 // module stopwatch(input clk, reset, run,
 //                  output logic [3:0] HEX0, HEX1, HEX2, HEX3)
 
-	stopwatch gameSW(.clk(MAX10_CLK1_50), .reset(Reset_SW), .run(Start_SW),
+	stopwatch gameSW(.clk(MAX10_CLK1_50), .reset(Reset_SW || game_reset), .run(Start_SW),
 					.HEX0(hex_num_0), .HEX1(hex_num_1), .HEX2(hex_num_3), .HEX3(hex_num_4));
-
+	assign sw_digits = {hex_num_4, hex_num_3, hex_num_1, hex_num_0};
 
 	//assign signs = 2'b00;
 	//assign hex_num_4 = 4'h4;
@@ -164,7 +169,14 @@ module lab7 (
 		.start_sw_export(Start_SW),
 		.reset_sw_export(Reset_SW),
 		.text_ctrl_keycode(keycode),
-		
+		.move_ready(Move_HL),            
+		.move_hl_export(Move_HL),
+		.win_cond_edge(win),
+		.win_export(win),
+		.game_rst_sig(game_reset),
+		.reset_game_export(game_reset),                 
+		.menu_hex(hex_num_5),
+		.sw_digits_export(sw_digits),
 		//VGA
 		.vga_port_red (VGA_R),
 		.vga_port_green (VGA_G),

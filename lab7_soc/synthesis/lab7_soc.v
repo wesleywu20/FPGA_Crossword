@@ -5,11 +5,16 @@
 `timescale 1 ps / 1 ps
 module lab7_soc (
 		input  wire        clk_clk,                        //                     clk.clk
+		output wire        game_rst_sig,                   //                game_rst.sig
 		input  wire [1:0]  key_external_connection_export, // key_external_connection.export
 		output wire [7:0]  keycode_export,                 //                 keycode.export
 		output wire [7:0]  led_wire_export,                //                led_wire.export
 		output wire [13:0] leds_export,                    //                    leds.export
+		output wire [3:0]  menu_hex,                       //                    menu.hex
+		input  wire        move_ready,                     //                    move.ready
+		output wire        move_hl_export,                 //                 move_hl.export
 		input  wire        reset_reset_n,                  //                   reset.reset_n
+		input  wire        reset_game_export,              //              reset_game.export
 		output wire        reset_sw_export,                //                reset_sw.export
 		output wire        sdram_clk_clk,                  //               sdram_clk.clk
 		output wire [12:0] sdram_wire_addr,                //              sdram_wire.addr
@@ -26,6 +31,7 @@ module lab7_soc (
 		output wire        spi0_SCLK,                      //                        .SCLK
 		output wire        spi0_SS_n,                      //                        .SS_n
 		output wire        start_sw_export,                //                start_sw.export
+		input  wire [15:0] sw_digits_export,               //               sw_digits.export
 		input  wire [7:0]  text_ctrl_keycode,              //               text_ctrl.keycode
 		input  wire        usb_gpx_export,                 //                 usb_gpx.export
 		input  wire        usb_irq_export,                 //                 usb_irq.export
@@ -34,10 +40,13 @@ module lab7_soc (
 		output wire [3:0]  vga_port_green,                 //                        .green
 		output wire [3:0]  vga_port_red,                   //                        .red
 		output wire        vga_port_hs,                    //                        .hs
-		output wire        vga_port_vs                     //                        .vs
+		output wire        vga_port_vs,                    //                        .vs
+		output wire        win_export,                     //                     win.export
+		input  wire        win_cond_edge                   //                win_cond.edge
 	);
 
 	wire         sdram_pll_c0_clk;                                                     // sdram_pll:c0 -> [mm_interconnect_0:sdram_pll_c0_clk, rst_controller_001:clk, sdram:clk]
+	wire         nios2_gen2_0_debug_reset_request_reset;                               // nios2_gen2_0:debug_reset_request -> [mm_interconnect_0:move_hl_reset_reset_bridge_in_reset_reset, move_hl:reset_n, rst_controller:reset_in1, rst_controller_001:reset_in1]
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                                    // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                                 // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                                 // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
@@ -64,6 +73,13 @@ module lab7_soc (
 	wire   [3:0] mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_byteenable; // mm_interconnect_0:VGA_text_mode_controller_0_avl_mm_slave_byteenable -> VGA_text_mode_controller_0:AVL_BYTE_EN
 	wire         mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_write;      // mm_interconnect_0:VGA_text_mode_controller_0_avl_mm_slave_write -> VGA_text_mode_controller_0:AVL_WRITE
 	wire  [31:0] mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_writedata;  // mm_interconnect_0:VGA_text_mode_controller_0_avl_mm_slave_writedata -> VGA_text_mode_controller_0:AVL_WRITEDATA
+	wire         mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_chipselect;           // mm_interconnect_0:puzzle_clues_mem_avl_mm_slave_chipselect -> puzzle_clues_mem:AVL_CS
+	wire  [31:0] mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_readdata;             // puzzle_clues_mem:AVL_READDATA -> mm_interconnect_0:puzzle_clues_mem_avl_mm_slave_readdata
+	wire  [12:0] mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_address;              // mm_interconnect_0:puzzle_clues_mem_avl_mm_slave_address -> puzzle_clues_mem:AVL_ADDR
+	wire         mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_read;                 // mm_interconnect_0:puzzle_clues_mem_avl_mm_slave_read -> puzzle_clues_mem:AVL_READ
+	wire   [3:0] mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_byteenable;           // mm_interconnect_0:puzzle_clues_mem_avl_mm_slave_byteenable -> puzzle_clues_mem:AVL_BYTE_EN
+	wire         mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_write;                // mm_interconnect_0:puzzle_clues_mem_avl_mm_slave_write -> puzzle_clues_mem:AVL_WRITE
+	wire  [31:0] mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_writedata;            // mm_interconnect_0:puzzle_clues_mem_avl_mm_slave_writedata -> puzzle_clues_mem:AVL_WRITEDATA
 	wire  [31:0] mm_interconnect_0_sysid_qsys_0_control_slave_readdata;                // sysid_qsys_0:readdata -> mm_interconnect_0:sysid_qsys_0_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_qsys_0_control_slave_address;                 // mm_interconnect_0:sysid_qsys_0_control_slave_address -> sysid_qsys_0:address
 	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_readdata;              // nios2_gen2_0:debug_mem_slave_readdata -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_readdata
@@ -136,6 +152,20 @@ module lab7_soc (
 	wire   [1:0] mm_interconnect_0_sw_reset_s1_address;                                // mm_interconnect_0:sw_reset_s1_address -> sw_reset:address
 	wire         mm_interconnect_0_sw_reset_s1_write;                                  // mm_interconnect_0:sw_reset_s1_write -> sw_reset:write_n
 	wire  [31:0] mm_interconnect_0_sw_reset_s1_writedata;                              // mm_interconnect_0:sw_reset_s1_writedata -> sw_reset:writedata
+	wire         mm_interconnect_0_move_hl_s1_chipselect;                              // mm_interconnect_0:move_hl_s1_chipselect -> move_hl:chipselect
+	wire  [31:0] mm_interconnect_0_move_hl_s1_readdata;                                // move_hl:readdata -> mm_interconnect_0:move_hl_s1_readdata
+	wire   [1:0] mm_interconnect_0_move_hl_s1_address;                                 // mm_interconnect_0:move_hl_s1_address -> move_hl:address
+	wire         mm_interconnect_0_move_hl_s1_write;                                   // mm_interconnect_0:move_hl_s1_write -> move_hl:write_n
+	wire  [31:0] mm_interconnect_0_move_hl_s1_writedata;                               // mm_interconnect_0:move_hl_s1_writedata -> move_hl:writedata
+	wire         mm_interconnect_0_win_s1_chipselect;                                  // mm_interconnect_0:win_s1_chipselect -> win:chipselect
+	wire  [31:0] mm_interconnect_0_win_s1_readdata;                                    // win:readdata -> mm_interconnect_0:win_s1_readdata
+	wire   [1:0] mm_interconnect_0_win_s1_address;                                     // mm_interconnect_0:win_s1_address -> win:address
+	wire         mm_interconnect_0_win_s1_write;                                       // mm_interconnect_0:win_s1_write -> win:write_n
+	wire  [31:0] mm_interconnect_0_win_s1_writedata;                                   // mm_interconnect_0:win_s1_writedata -> win:writedata
+	wire  [31:0] mm_interconnect_0_reset_game_s1_readdata;                             // reset_game:readdata -> mm_interconnect_0:reset_game_s1_readdata
+	wire   [1:0] mm_interconnect_0_reset_game_s1_address;                              // mm_interconnect_0:reset_game_s1_address -> reset_game:address
+	wire  [31:0] mm_interconnect_0_sw_digits_s1_readdata;                              // sw_digits:readdata -> mm_interconnect_0:sw_digits_s1_readdata
+	wire   [1:0] mm_interconnect_0_sw_digits_s1_address;                               // mm_interconnect_0:sw_digits_s1_address -> sw_digits:address
 	wire         mm_interconnect_0_spi0_spi_control_port_chipselect;                   // mm_interconnect_0:spi0_spi_control_port_chipselect -> spi0:spi_select
 	wire  [15:0] mm_interconnect_0_spi0_spi_control_port_readdata;                     // spi0:data_to_cpu -> mm_interconnect_0:spi0_spi_control_port_readdata
 	wire   [2:0] mm_interconnect_0_spi0_spi_control_port_address;                      // mm_interconnect_0:spi0_spi_control_port_address -> spi0:mem_addr
@@ -146,27 +176,30 @@ module lab7_soc (
 	wire         irq_mapper_receiver1_irq;                                             // timer_0:irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                             // spi0:irq -> irq_mapper:receiver2_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                                 // irq_mapper:sender_irq -> nios2_gen2_0:irq
-	wire         rst_controller_reset_out_reset;                                       // rst_controller:reset_out -> [VGA_text_mode_controller_0:RESET, irq_mapper:reset, jtag_uart_0:rst_n, key:reset_n, keycode:reset_n, led:reset_n, leds_pio:reset_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset, rst_translator:in_reset, sdram_pll:reset, spi0:reset_n, stopwatch:reset_n, sw_reset:reset_n, sysid_qsys_0:reset_n, timer_0:reset_n, usb_gpx:reset_n, usb_irq:reset_n, usb_rst:reset_n]
+	wire         rst_controller_reset_out_reset;                                       // rst_controller:reset_out -> [VGA_text_mode_controller_0:RESET, irq_mapper:reset, jtag_uart_0:rst_n, key:reset_n, keycode:reset_n, led:reset_n, leds_pio:reset_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset, puzzle_clues_mem:RESET, reset_game:reset_n, rst_translator:in_reset, sdram_pll:reset, spi0:reset_n, stopwatch:reset_n, sw_digits:reset_n, sw_reset:reset_n, sysid_qsys_0:reset_n, timer_0:reset_n, usb_gpx:reset_n, usb_irq:reset_n, usb_rst:reset_n, win:reset_n]
 	wire         rst_controller_reset_out_reset_req;                                   // rst_controller:reset_req -> [nios2_gen2_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
-	wire         nios2_gen2_0_debug_reset_request_reset;                               // nios2_gen2_0:debug_reset_request -> [rst_controller:reset_in1, rst_controller_001:reset_in1]
 	wire         rst_controller_001_reset_out_reset;                                   // rst_controller_001:reset_out -> [mm_interconnect_0:sdram_reset_reset_bridge_in_reset_reset, sdram:reset_n]
 
 	vga_text_avl_interface vga_text_mode_controller_0 (
-		.CLK           (clk_clk),                                                              //          CLK.clk
-		.RESET         (rst_controller_reset_out_reset),                                       //        RESET.reset
-		.AVL_ADDR      (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_address),    // avl_mm_slave.address
-		.AVL_BYTE_EN   (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_byteenable), //             .byteenable
-		.AVL_CS        (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_chipselect), //             .chipselect
-		.AVL_READ      (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_read),       //             .read
-		.AVL_READDATA  (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_readdata),   //             .readdata
-		.AVL_WRITE     (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_write),      //             .write
-		.AVL_WRITEDATA (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_writedata),  //             .writedata
-		.blue          (vga_port_blue),                                                        //     VGA_port.blue
-		.green         (vga_port_green),                                                       //             .green
-		.red           (vga_port_red),                                                         //             .red
-		.hs            (vga_port_hs),                                                          //             .hs
-		.vs            (vga_port_vs),                                                          //             .vs
-		.keycode       (text_ctrl_keycode)                                                     //     keyboard.keycode
+		.CLK           (clk_clk),                                                              //           CLK.clk
+		.RESET         (rst_controller_reset_out_reset),                                       //         RESET.reset
+		.AVL_ADDR      (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_address),    //  avl_mm_slave.address
+		.AVL_BYTE_EN   (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_byteenable), //              .byteenable
+		.AVL_CS        (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_chipselect), //              .chipselect
+		.AVL_READ      (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_read),       //              .read
+		.AVL_READDATA  (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_readdata),   //              .readdata
+		.AVL_WRITE     (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_write),      //              .write
+		.AVL_WRITEDATA (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_writedata),  //              .writedata
+		.blue          (vga_port_blue),                                                        //      VGA_port.blue
+		.green         (vga_port_green),                                                       //              .green
+		.red           (vga_port_red),                                                         //              .red
+		.hs            (vga_port_hs),                                                          //              .hs
+		.vs            (vga_port_vs),                                                          //              .vs
+		.keycode       (text_ctrl_keycode),                                                    //      keyboard.keycode
+		.move_hl       (move_ready),                                                           //    move_ready.ready
+		.game_won      (win_cond_edge),                                                        // win_condition.edge
+		.game_reset    (game_rst_sig),                                                         //    game_reset.sig
+		.indicator     (menu_hex)                                                              //     indicator.hex
 	);
 
 	lab7_soc_jtag_uart_0 jtag_uart_0 (
@@ -223,6 +256,17 @@ module lab7_soc (
 		.out_port   (leds_export)                               // external_connection.export
 	);
 
+	lab7_soc_move_hl move_hl (
+		.clk        (clk_clk),                                 //                 clk.clk
+		.reset_n    (~nios2_gen2_0_debug_reset_request_reset), //               reset.reset_n
+		.address    (mm_interconnect_0_move_hl_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_move_hl_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_move_hl_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_move_hl_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_move_hl_s1_readdata),   //                    .readdata
+		.out_port   (move_hl_export)                           // external_connection.export
+	);
+
 	lab7_soc_nios2_gen2_0 nios2_gen2_0 (
 		.clk                                 (clk_clk),                                                    //                       clk.clk
 		.reset_n                             (~rst_controller_reset_out_reset),                            //                     reset.reset_n
@@ -264,6 +308,26 @@ module lab7_soc (
 		.reset      (rst_controller_reset_out_reset),                   // reset1.reset
 		.reset_req  (rst_controller_reset_out_reset_req),               //       .reset_req
 		.freeze     (1'b0)                                              // (terminated)
+	);
+
+	puzzle puzzle_clues_mem (
+		.CLK           (clk_clk),                                                    //          CLK.clk
+		.RESET         (rst_controller_reset_out_reset),                             //        RESET.reset
+		.AVL_ADDR      (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_address),    // avl_mm_slave.address
+		.AVL_BYTE_EN   (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_byteenable), //             .byteenable
+		.AVL_CS        (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_chipselect), //             .chipselect
+		.AVL_READ      (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_read),       //             .read
+		.AVL_WRITE     (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_write),      //             .write
+		.AVL_WRITEDATA (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_writedata),  //             .writedata
+		.AVL_READDATA  (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_readdata)    //             .readdata
+	);
+
+	lab7_soc_reset_game reset_game (
+		.clk      (clk_clk),                                  //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),          //               reset.reset_n
+		.address  (mm_interconnect_0_reset_game_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_reset_game_s1_readdata), //                    .readdata
+		.in_port  (reset_game_export)                         // external_connection.export
 	);
 
 	lab7_soc_sdram sdram (
@@ -332,7 +396,7 @@ module lab7_soc (
 		.SS_n          (spi0_SS_n)                                           //                 .export
 	);
 
-	lab7_soc_stopwatch stopwatch (
+	lab7_soc_move_hl stopwatch (
 		.clk        (clk_clk),                                   //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),           //               reset.reset_n
 		.address    (mm_interconnect_0_stopwatch_s1_address),    //                  s1.address
@@ -343,7 +407,15 @@ module lab7_soc (
 		.out_port   (start_sw_export)                            // external_connection.export
 	);
 
-	lab7_soc_stopwatch sw_reset (
+	lab7_soc_sw_digits sw_digits (
+		.clk      (clk_clk),                                 //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),         //               reset.reset_n
+		.address  (mm_interconnect_0_sw_digits_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_sw_digits_s1_readdata), //                    .readdata
+		.in_port  (sw_digits_export)                         // external_connection.export
+	);
+
+	lab7_soc_move_hl sw_reset (
 		.clk        (clk_clk),                                  //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),          //               reset.reset_n
 		.address    (mm_interconnect_0_sw_reset_s1_address),    //                  s1.address
@@ -372,7 +444,7 @@ module lab7_soc (
 		.irq        (irq_mapper_receiver1_irq)                 //   irq.irq
 	);
 
-	lab7_soc_usb_gpx usb_gpx (
+	lab7_soc_reset_game usb_gpx (
 		.clk      (clk_clk),                               //                 clk.clk
 		.reset_n  (~rst_controller_reset_out_reset),       //               reset.reset_n
 		.address  (mm_interconnect_0_usb_gpx_s1_address),  //                  s1.address
@@ -380,7 +452,7 @@ module lab7_soc (
 		.in_port  (usb_gpx_export)                         // external_connection.export
 	);
 
-	lab7_soc_usb_gpx usb_irq (
+	lab7_soc_reset_game usb_irq (
 		.clk      (clk_clk),                               //                 clk.clk
 		.reset_n  (~rst_controller_reset_out_reset),       //               reset.reset_n
 		.address  (mm_interconnect_0_usb_irq_s1_address),  //                  s1.address
@@ -388,7 +460,7 @@ module lab7_soc (
 		.in_port  (usb_irq_export)                         // external_connection.export
 	);
 
-	lab7_soc_stopwatch usb_rst (
+	lab7_soc_move_hl usb_rst (
 		.clk        (clk_clk),                                 //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),         //               reset.reset_n
 		.address    (mm_interconnect_0_usb_rst_s1_address),    //                  s1.address
@@ -399,9 +471,21 @@ module lab7_soc (
 		.out_port   (usb_rst_export)                           // external_connection.export
 	);
 
+	lab7_soc_move_hl win (
+		.clk        (clk_clk),                             //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),     //               reset.reset_n
+		.address    (mm_interconnect_0_win_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_win_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_win_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_win_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_win_s1_readdata),   //                    .readdata
+		.out_port   (win_export)                           // external_connection.export
+	);
+
 	lab7_soc_mm_interconnect_0 mm_interconnect_0 (
 		.clk_0_clk_clk                                      (clk_clk),                                                              //                                clk_0_clk.clk
 		.sdram_pll_c0_clk                                   (sdram_pll_c0_clk),                                                     //                             sdram_pll_c0.clk
+		.move_hl_reset_reset_bridge_in_reset_reset          (nios2_gen2_0_debug_reset_request_reset),                               //      move_hl_reset_reset_bridge_in_reset.reset
 		.nios2_gen2_0_reset_reset_bridge_in_reset_reset     (rst_controller_reset_out_reset),                                       // nios2_gen2_0_reset_reset_bridge_in_reset.reset
 		.sdram_reset_reset_bridge_in_reset_reset            (rst_controller_001_reset_out_reset),                                   //        sdram_reset_reset_bridge_in_reset.reset
 		.nios2_gen2_0_data_master_address                   (nios2_gen2_0_data_master_address),                                     //                 nios2_gen2_0_data_master.address
@@ -440,6 +524,11 @@ module lab7_soc (
 		.leds_pio_s1_readdata                               (mm_interconnect_0_leds_pio_s1_readdata),                               //                                         .readdata
 		.leds_pio_s1_writedata                              (mm_interconnect_0_leds_pio_s1_writedata),                              //                                         .writedata
 		.leds_pio_s1_chipselect                             (mm_interconnect_0_leds_pio_s1_chipselect),                             //                                         .chipselect
+		.move_hl_s1_address                                 (mm_interconnect_0_move_hl_s1_address),                                 //                               move_hl_s1.address
+		.move_hl_s1_write                                   (mm_interconnect_0_move_hl_s1_write),                                   //                                         .write
+		.move_hl_s1_readdata                                (mm_interconnect_0_move_hl_s1_readdata),                                //                                         .readdata
+		.move_hl_s1_writedata                               (mm_interconnect_0_move_hl_s1_writedata),                               //                                         .writedata
+		.move_hl_s1_chipselect                              (mm_interconnect_0_move_hl_s1_chipselect),                              //                                         .chipselect
 		.nios2_gen2_0_debug_mem_slave_address               (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_address),               //             nios2_gen2_0_debug_mem_slave.address
 		.nios2_gen2_0_debug_mem_slave_write                 (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_write),                 //                                         .write
 		.nios2_gen2_0_debug_mem_slave_read                  (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_read),                  //                                         .read
@@ -455,6 +544,15 @@ module lab7_soc (
 		.onchip_memory2_0_s1_byteenable                     (mm_interconnect_0_onchip_memory2_0_s1_byteenable),                     //                                         .byteenable
 		.onchip_memory2_0_s1_chipselect                     (mm_interconnect_0_onchip_memory2_0_s1_chipselect),                     //                                         .chipselect
 		.onchip_memory2_0_s1_clken                          (mm_interconnect_0_onchip_memory2_0_s1_clken),                          //                                         .clken
+		.puzzle_clues_mem_avl_mm_slave_address              (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_address),              //            puzzle_clues_mem_avl_mm_slave.address
+		.puzzle_clues_mem_avl_mm_slave_write                (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_write),                //                                         .write
+		.puzzle_clues_mem_avl_mm_slave_read                 (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_read),                 //                                         .read
+		.puzzle_clues_mem_avl_mm_slave_readdata             (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_readdata),             //                                         .readdata
+		.puzzle_clues_mem_avl_mm_slave_writedata            (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_writedata),            //                                         .writedata
+		.puzzle_clues_mem_avl_mm_slave_byteenable           (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_byteenable),           //                                         .byteenable
+		.puzzle_clues_mem_avl_mm_slave_chipselect           (mm_interconnect_0_puzzle_clues_mem_avl_mm_slave_chipselect),           //                                         .chipselect
+		.reset_game_s1_address                              (mm_interconnect_0_reset_game_s1_address),                              //                            reset_game_s1.address
+		.reset_game_s1_readdata                             (mm_interconnect_0_reset_game_s1_readdata),                             //                                         .readdata
 		.sdram_s1_address                                   (mm_interconnect_0_sdram_s1_address),                                   //                                 sdram_s1.address
 		.sdram_s1_write                                     (mm_interconnect_0_sdram_s1_write),                                     //                                         .write
 		.sdram_s1_read                                      (mm_interconnect_0_sdram_s1_read),                                      //                                         .read
@@ -480,6 +578,8 @@ module lab7_soc (
 		.stopwatch_s1_readdata                              (mm_interconnect_0_stopwatch_s1_readdata),                              //                                         .readdata
 		.stopwatch_s1_writedata                             (mm_interconnect_0_stopwatch_s1_writedata),                             //                                         .writedata
 		.stopwatch_s1_chipselect                            (mm_interconnect_0_stopwatch_s1_chipselect),                            //                                         .chipselect
+		.sw_digits_s1_address                               (mm_interconnect_0_sw_digits_s1_address),                               //                             sw_digits_s1.address
+		.sw_digits_s1_readdata                              (mm_interconnect_0_sw_digits_s1_readdata),                              //                                         .readdata
 		.sw_reset_s1_address                                (mm_interconnect_0_sw_reset_s1_address),                                //                              sw_reset_s1.address
 		.sw_reset_s1_write                                  (mm_interconnect_0_sw_reset_s1_write),                                  //                                         .write
 		.sw_reset_s1_readdata                               (mm_interconnect_0_sw_reset_s1_readdata),                               //                                         .readdata
@@ -507,7 +607,12 @@ module lab7_soc (
 		.VGA_text_mode_controller_0_avl_mm_slave_readdata   (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_readdata),   //                                         .readdata
 		.VGA_text_mode_controller_0_avl_mm_slave_writedata  (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_writedata),  //                                         .writedata
 		.VGA_text_mode_controller_0_avl_mm_slave_byteenable (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_byteenable), //                                         .byteenable
-		.VGA_text_mode_controller_0_avl_mm_slave_chipselect (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_chipselect)  //                                         .chipselect
+		.VGA_text_mode_controller_0_avl_mm_slave_chipselect (mm_interconnect_0_vga_text_mode_controller_0_avl_mm_slave_chipselect), //                                         .chipselect
+		.win_s1_address                                     (mm_interconnect_0_win_s1_address),                                     //                                   win_s1.address
+		.win_s1_write                                       (mm_interconnect_0_win_s1_write),                                       //                                         .write
+		.win_s1_readdata                                    (mm_interconnect_0_win_s1_readdata),                                    //                                         .readdata
+		.win_s1_writedata                                   (mm_interconnect_0_win_s1_writedata),                                   //                                         .writedata
+		.win_s1_chipselect                                  (mm_interconnect_0_win_s1_chipselect)                                   //                                         .chipselect
 	);
 
 	lab7_soc_irq_mapper irq_mapper (

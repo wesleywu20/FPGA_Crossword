@@ -1,11 +1,15 @@
 	component lab7_soc is
 		port (
 			clk_clk                        : in    std_logic                     := 'X';             -- clk
+			game_rst_sig                   : out   std_logic;                                        -- sig
 			key_external_connection_export : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- export
 			keycode_export                 : out   std_logic_vector(7 downto 0);                     -- export
 			led_wire_export                : out   std_logic_vector(7 downto 0);                     -- export
 			leds_export                    : out   std_logic_vector(13 downto 0);                    -- export
+			move_ready                     : in    std_logic                     := 'X';             -- ready
+			move_hl_export                 : out   std_logic;                                        -- export
 			reset_reset_n                  : in    std_logic                     := 'X';             -- reset_n
+			reset_game_export              : in    std_logic                     := 'X';             -- export
 			reset_sw_export                : out   std_logic;                                        -- export
 			sdram_clk_clk                  : out   std_logic;                                        -- clk
 			sdram_wire_addr                : out   std_logic_vector(12 downto 0);                    -- addr
@@ -31,18 +35,25 @@
 			vga_port_red                   : out   std_logic_vector(3 downto 0);                     -- red
 			vga_port_hs                    : out   std_logic;                                        -- hs
 			vga_port_vs                    : out   std_logic;                                        -- vs
-			move_hl_export                 : in    std_logic                     := 'X'              -- export
+			win_export                     : out   std_logic;                                        -- export
+			win_cond_edge                  : in    std_logic                     := 'X';             -- edge
+			menu_hex                       : out   std_logic_vector(3 downto 0);                     -- hex
+			sw_digits_export               : in    std_logic_vector(15 downto 0) := (others => 'X')  -- export
 		);
 	end component lab7_soc;
 
 	u0 : component lab7_soc
 		port map (
 			clk_clk                        => CONNECTED_TO_clk_clk,                        --                     clk.clk
+			game_rst_sig                   => CONNECTED_TO_game_rst_sig,                   --                game_rst.sig
 			key_external_connection_export => CONNECTED_TO_key_external_connection_export, -- key_external_connection.export
 			keycode_export                 => CONNECTED_TO_keycode_export,                 --                 keycode.export
 			led_wire_export                => CONNECTED_TO_led_wire_export,                --                led_wire.export
 			leds_export                    => CONNECTED_TO_leds_export,                    --                    leds.export
+			move_ready                     => CONNECTED_TO_move_ready,                     --                    move.ready
+			move_hl_export                 => CONNECTED_TO_move_hl_export,                 --                 move_hl.export
 			reset_reset_n                  => CONNECTED_TO_reset_reset_n,                  --                   reset.reset_n
+			reset_game_export              => CONNECTED_TO_reset_game_export,              --              reset_game.export
 			reset_sw_export                => CONNECTED_TO_reset_sw_export,                --                reset_sw.export
 			sdram_clk_clk                  => CONNECTED_TO_sdram_clk_clk,                  --               sdram_clk.clk
 			sdram_wire_addr                => CONNECTED_TO_sdram_wire_addr,                --              sdram_wire.addr
@@ -68,6 +79,9 @@
 			vga_port_red                   => CONNECTED_TO_vga_port_red,                   --                        .red
 			vga_port_hs                    => CONNECTED_TO_vga_port_hs,                    --                        .hs
 			vga_port_vs                    => CONNECTED_TO_vga_port_vs,                    --                        .vs
-			move_hl_export                 => CONNECTED_TO_move_hl_export                  --                 move_hl.export
+			win_export                     => CONNECTED_TO_win_export,                     --                     win.export
+			win_cond_edge                  => CONNECTED_TO_win_cond_edge,                  --                win_cond.edge
+			menu_hex                       => CONNECTED_TO_menu_hex,                       --                    menu.hex
+			sw_digits_export               => CONNECTED_TO_sw_digits_export                --               sw_digits.export
 		);
 

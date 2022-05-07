@@ -1,6 +1,6 @@
-19:18:57 **** Incremental Build of configuration Nios II for project crossword_bsp ****
+22:02:11 **** Incremental Build of configuration Nios II for project crossword_bsp ****
 make all 
 [BSP build complete]
 
-19:18:58 Build Finished (took 1s.445ms)
+22:02:13 Build Finished (took 1s.276ms)
 

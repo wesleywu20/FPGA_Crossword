@@ -168,15 +168,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[1]",
+					"name" : "HEX5[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[2]",
+					"name" : "HEX5[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[6]",
+					"name" : "HEX5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[5]",
 					"strict" : false
 				},
 				{

@@ -1,11 +1,15 @@
 
 module lab7_soc (
 	clk_clk,
+	game_rst_sig,
 	key_external_connection_export,
 	keycode_export,
 	led_wire_export,
 	leds_export,
+	move_ready,
+	move_hl_export,
 	reset_reset_n,
+	reset_game_export,
 	reset_sw_export,
 	sdram_clk_clk,
 	sdram_wire_addr,
@@ -31,14 +35,21 @@ module lab7_soc (
 	vga_port_red,
 	vga_port_hs,
 	vga_port_vs,
-	move_hl_export);	
+	win_export,
+	win_cond_edge,
+	menu_hex,
+	sw_digits_export);	
 
 	input		clk_clk;
+	output		game_rst_sig;
 	input	[1:0]	key_external_connection_export;
 	output	[7:0]	keycode_export;
 	output	[7:0]	led_wire_export;
 	output	[13:0]	leds_export;
+	input		move_ready;
+	output		move_hl_export;
 	input		reset_reset_n;
+	input		reset_game_export;
 	output		reset_sw_export;
 	output		sdram_clk_clk;
 	output	[12:0]	sdram_wire_addr;
@@ -64,5 +75,8 @@ module lab7_soc (
 	output	[3:0]	vga_port_red;
 	output		vga_port_hs;
 	output		vga_port_vs;
-	input		move_hl_export;
+	output		win_export;
+	input		win_cond_edge;
+	output	[3:0]	menu_hex;
+	input	[15:0]	sw_digits_export;
 endmodule

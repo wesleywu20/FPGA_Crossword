@@ -42,3 +42,8 @@ DRsize.010 0 0 0 1 0 1
 DRsize.011 0 0 1 0 0 1 
 DRsize.100 0 1 0 0 0 1 
 DRsize.101 1 0 0 0 0 1 
+
+State Machine - |lab7|lab7_soc:u0|vga_text_avl_interface:vga_text_mode_controller_0|cwsm:game_logic|State
+Name State.Level 
+State.Menu 0 
+State.Level 1 

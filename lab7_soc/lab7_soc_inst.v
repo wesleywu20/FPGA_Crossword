@@ -1,10 +1,14 @@
 	lab7_soc u0 (
 		.clk_clk                        (<connected-to-clk_clk>),                        //                     clk.clk
+		.game_rst_sig                   (<connected-to-game_rst_sig>),                   //                game_rst.sig
 		.key_external_connection_export (<connected-to-key_external_connection_export>), // key_external_connection.export
 		.keycode_export                 (<connected-to-keycode_export>),                 //                 keycode.export
 		.led_wire_export                (<connected-to-led_wire_export>),                //                led_wire.export
 		.leds_export                    (<connected-to-leds_export>),                    //                    leds.export
+		.move_ready                     (<connected-to-move_ready>),                     //                    move.ready
+		.move_hl_export                 (<connected-to-move_hl_export>),                 //                 move_hl.export
 		.reset_reset_n                  (<connected-to-reset_reset_n>),                  //                   reset.reset_n
+		.reset_game_export              (<connected-to-reset_game_export>),              //              reset_game.export
 		.reset_sw_export                (<connected-to-reset_sw_export>),                //                reset_sw.export
 		.sdram_clk_clk                  (<connected-to-sdram_clk_clk>),                  //               sdram_clk.clk
 		.sdram_wire_addr                (<connected-to-sdram_wire_addr>),                //              sdram_wire.addr
@@ -30,6 +34,9 @@
 		.vga_port_red                   (<connected-to-vga_port_red>),                   //                        .red
 		.vga_port_hs                    (<connected-to-vga_port_hs>),                    //                        .hs
 		.vga_port_vs                    (<connected-to-vga_port_vs>),                    //                        .vs
-		.move_hl_export                 (<connected-to-move_hl_export>)                  //                 move_hl.export
+		.win_export                     (<connected-to-win_export>),                     //                     win.export
+		.win_cond_edge                  (<connected-to-win_cond_edge>),                  //                win_cond.edge
+		.menu_hex                       (<connected-to-menu_hex>),                       //                    menu.hex
+		.sw_digits_export               (<connected-to-sw_digits_export>)                //               sw_digits.export
 	);
 

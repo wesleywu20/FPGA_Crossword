@@ -22,6 +22,9 @@ BKG_R/G/B = Background color, flipped with foreground when IVn bit is set
 FGD_R/G/B = Foreground color, flipped with background when Inv bit is set
 
 ************************************************************************/
+
+// hello friends! welcome to hell. you'll love it here :) good luck grinding! -isha <3
+
 `define NUM_REGS 601 //80*30 characters / 4 characters per register
 `define CTRL_REG 600 //index of control register
 `define LINE_WIDTH 3
@@ -47,10 +50,15 @@ module vga_text_avl_interface (
 	output logic [31:0] AVL_READDATA,		// Avalon-MM Read Data
 
     input  logic [7:0] keycode,
+
+    input logic move_hl, 
+    input logic game_won,
 	
 	// Exported Conduit (mapped to VGA port - make sure you export in Platform Designer)
 	output logic [3:0]  red, green, blue,	// VGA color channels (mapped to output pins in top-level)
-	output logic hs, vs						// VGA HS/VS
+	output logic hs, vs,						// VGA HS/VS
+    output logic game_reset,
+    output logic [3:0] indicator
 );
 
 
@@ -58,6 +66,7 @@ module vga_text_avl_interface (
 logic [31:0] PALETTE_REG [8];
 //put other local variables here
 logic hsync, vsync, pxl_clk, blank, sync;
+logic move_hl_ready;
 logic [9:0] drawX, drawY;
 logic [7:0] char;
 logic [3:0] r, g, b;
@@ -67,7 +76,8 @@ logic [31:0] COLOR_DATA, CHARS;
 logic [11:0] ram_addr;
 logic [9:0] highlightX, highlightY;
 
-
+// initial
+//     $readmemh("vram_init.txt", vram)
 
 //Declare submodules..e.g. VGA controller, ROMS, etc
 // module  vga_controller ( input        Clk,       // 50 MHz clock
@@ -97,7 +107,18 @@ johncena ram(.address_a(AVL_ADDR), .address_b(ram_addr),
 //                		output [9:0]  highlightX, highlightY);
 highlight hl(.Reset(RESET), .frame_clk(vs),
              .keycode(keycode),
+             .move(move_hl),
              .highlightX(highlightX), .highlightY(highlightY));
+
+// module cwsm(input clk, reset, run, win,
+//             input [7:0] keycode,
+//             output [1:0] display)
+logic [1:0] display;
+logic [3:0] hexindicator;
+cwsm game_logic(.clk(CLK), .reset(keycode == 8'h28), .run(keycode == 8'h28), .win(game_won),
+                .keycode(keycode), .display(display), .game_reset(game_reset), .hex(hexindicator));
+assign indicator = hexindicator;
+
 
 //handle drawing (may either be combinational or sequential - or both).
 //  [character1 | color1 | character2 | color2]
@@ -127,7 +148,7 @@ assign BKG_R = PALETTE_REG[COLOR[3:1]][COLOR[0] * 12 + 9 +: 4];
 assign BKG_G = PALETTE_REG[COLOR[3:1]][COLOR[0] * 12 + 5 +: 4];
 assign BKG_B = PALETTE_REG[COLOR[3:1]][COLOR[0] * 12 + 1 +: 4];
 
-logic IVn, orig_pix, act_pix;
+logic IVn, org_pix, act_pix;
 
 // logic [10:0] sprite_addr;
 // assign sprite_addr = {keycode[6:0], drawY[3:0]};
@@ -148,23 +169,34 @@ begin
     // end
     if (blank)
     begin
-        if (((drawX + 1) >= `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawX <= `CROSSWORD_RIGHT_EDGE + `LINE_WIDTH / 2) || // drawing right edge of crossword
+       
+        if ((display == 1 || display == 3) && (((drawX + 1) >= `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawX <= `CROSSWORD_RIGHT_EDGE + `LINE_WIDTH / 2 && drawY >= 80) || // drawing right edge of crossword
             ((drawY + 1) % `HORIZONTAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2) || // drawing crossword grid horizontal lines)
+            (drawY == 79) ||
             ((drawX - 3) % `VERTICAL_DIV == 0 && drawX < `CROSSWORD_RIGHT_EDGE - `LINE_WIDTH / 2 && drawY >= 80) || // drawing crossword grid vertical lines
             (drawX < 3 && drawY >= 80)
-        ) 
+        )) 
         begin
             r <= 0;
             g <= 0;
             b <= 0;
         end
-        else if (act_pix == 1'b1) 
+
+        else if (act_pix == 1'b1 && (display == 0 || display == 1))//&& (display == 1 || display == 3)) 
         begin 
             r <= FGD_R;
             g <= FGD_G;
             b <= FGD_B;
         end
-        else if ((drawX >= highlightX && drawX <= highlightX + 76) &&
+
+        else if (display == 0)
+        begin
+            r <= 4'b0000;
+            g <= 4'b0000;
+            b <= 4'b0000;
+        end
+
+        else if ((display == 1 || display == 3) && (drawX >= highlightX && drawX <= highlightX + 78) &&
                  (drawY >= highlightY && drawY <= highlightY + 78))
         begin
             r <= 4'b1111;
