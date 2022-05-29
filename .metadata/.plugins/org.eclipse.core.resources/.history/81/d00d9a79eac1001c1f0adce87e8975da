@@ -1,6 +1,0 @@
-#include "palette_test.h"
-
-int main() {
-	keyToText();
-	return 0;
-}
