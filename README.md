@@ -1,5 +1,5 @@
 # FPGA Crossword
-Final project for ECE 385 - Digital Systems Laboratory 
+Final project for ECE 385 - Digital Systems Laboratory \
 Created by Wesley Wu and Karthik Prasad
 
 ## High-Level Overview
@@ -12,3 +12,7 @@ Additionally, we wrote a python script to convert the puzzle clues to binary (AS
 
 ## Software
 We used C to write most of our game logic. In our C code, we first read the clues from the pre-initialized memory using pointer arithmetic. After reading the clues, we placed the letters corresponding to the clues in an array indicating the correct cell it belongs in. Then, inside the game loop, we counted the number of correct characters inputted so far and stopped the game and displayed the stopwatch on-screen once the user solved the puzzle (or revealed all of the clues).
+
+## Demo Video
+
+Link to demo video [here](https://drive.google.com/file/d/1genCxBSWYrUkiHsH-gXq6WMDfNf4uDSd/view?usp=sharing)!
